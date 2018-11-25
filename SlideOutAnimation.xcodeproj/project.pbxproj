@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E5108CA21AA9ABA00C98B75 /* HomeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C521AA9ABA00C98B75 /* HomeBase.swift */; };
+		5E5108CB21AA9ABA00C98B75 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C621AA9ABA00C98B75 /* Items.swift */; };
+		5E5108CC21AA9ABA00C98B75 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C721AA9ABA00C98B75 /* Section.swift */; };
+		5E5108CD21AA9ABA00C98B75 /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C821AA9ABA00C98B75 /* Modules.swift */; };
+		5E5108CE21AA9ABA00C98B75 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C921AA9ABA00C98B75 /* Metadata.swift */; };
 		5EE2D96C21AA75BA0012EFC4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */; };
 		5EE2D96E21AA7BF20012EFC4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */; };
-		5EE2D97021AA7C6F0012EFC4 /* HomeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96F21AA7C6F0012EFC4 /* HomeBase.swift */; };
-		5EE2D97221AA80B60012EFC4 /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D97121AA80B60012EFC4 /* Modules.swift */; };
 		A72BB1911F53F47300E674F4 /* EditEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */; };
 		A75AD0391F5EA158008B1237 /* AddToDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AD0381F5EA158008B1237 /* AddToDiaryViewController.swift */; };
 		A75E02431F34953500FB1872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E02421F34953500FB1872 /* AppDelegate.swift */; };
@@ -70,10 +73,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E5108C521AA9ABA00C98B75 /* HomeBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBase.swift; sourceTree = "<group>"; };
+		5E5108C621AA9ABA00C98B75 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		5E5108C721AA9ABA00C98B75 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		5E5108C821AA9ABA00C98B75 /* Modules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
+		5E5108C921AA9ABA00C98B75 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		5EE2D96F21AA7C6F0012EFC4 /* HomeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBase.swift; sourceTree = "<group>"; };
-		5EE2D97121AA80B60012EFC4 /* Modules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
 		A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventsViewController.swift; sourceTree = "<group>"; };
 		A732B3E01F517F7500660C15 /* SlideOutAnimation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlideOutAnimation.entitlements; sourceTree = "<group>"; };
 		A732B3E11F517F8A00660C15 /* StickyNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StickyNotes.entitlements; sourceTree = "<group>"; };
@@ -168,10 +174,13 @@
 				A75E02591F349CC400FB1872 /* PresentViewController.swift */,
 				A75E02461F34953500FB1872 /* Main.storyboard */,
 				5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */,
-				5EE2D96F21AA7C6F0012EFC4 /* HomeBase.swift */,
-				5EE2D97121AA80B60012EFC4 /* Modules.swift */,
 				A77C24141F5ACD92006F0F2A /* DiaryContentCell.swift */,
 				A77C240C1F5A6D0F006F0F2A /* DiaryImageCellTableViewCell.swift */,
+				5E5108C521AA9ABA00C98B75 /* HomeBase.swift */,
+				5E5108C621AA9ABA00C98B75 /* Items.swift */,
+				5E5108C921AA9ABA00C98B75 /* Metadata.swift */,
+				5E5108C821AA9ABA00C98B75 /* Modules.swift */,
+				5E5108C721AA9ABA00C98B75 /* Section.swift */,
 				A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */,
 				A773F80B1F39CB4D005A9437 /* LeadCellTableViewCell.swift */,
 				A773F80D1F39D8B9005A9437 /* DayEventsViewController.swift */,
@@ -327,19 +336,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77C24151F5ACD92006F0F2A /* DiaryContentCell.swift in Sources */,
+				5E5108CD21AA9ABA00C98B75 /* Modules.swift in Sources */,
+				5E5108CB21AA9ABA00C98B75 /* Items.swift in Sources */,
 				A75AD0391F5EA158008B1237 /* AddToDiaryViewController.swift in Sources */,
 				5EE2D96E21AA7BF20012EFC4 /* NewsViewController.swift in Sources */,
 				A770C8EA1F3C1DAC00C2BE84 /* CustomNavigationController.swift in Sources */,
 				A75E024B1F34953500FB1872 /* SlideOutAnimation.xcdatamodeld in Sources */,
 				A773F80E1F39D8B9005A9437 /* DayEventsViewController.swift in Sources */,
+				5E5108CC21AA9ABA00C98B75 /* Section.swift in Sources */,
 				A773F80A1F39C184005A9437 /* CustomLayout.swift in Sources */,
 				5EE2D96C21AA75BA0012EFC4 /* ApiService.swift in Sources */,
 				A75E02451F34953500FB1872 /* ViewController.swift in Sources */,
 				A75E025A1F349CC400FB1872 /* PresentViewController.swift in Sources */,
 				A770C8E81F3C1D5200C2BE84 /* AddEventsViewController.swift in Sources */,
+				5E5108CE21AA9ABA00C98B75 /* Metadata.swift in Sources */,
 				A72BB1911F53F47300E674F4 /* EditEventsViewController.swift in Sources */,
 				A75E02431F34953500FB1872 /* AppDelegate.swift in Sources */,
-				5EE2D97021AA7C6F0012EFC4 /* HomeBase.swift in Sources */,
+				5E5108CA21AA9ABA00C98B75 /* HomeBase.swift in Sources */,
 				A75E02581F349BD800FB1872 /* MenuViewController.swift in Sources */,
 				A7657C231F3F29AF00A6EF96 /* StickyNotesViewController.swift in Sources */,
 				A7F0E2D41F9226AA00E0A7EC /* SearchPlacesViewController.swift in Sources */,
@@ -347,7 +360,6 @@
 				A77C240B1F5A6C66006F0F2A /* DiaryViewController.swift in Sources */,
 				A77C240D1F5A6D0F006F0F2A /* DiaryImageCellTableViewCell.swift in Sources */,
 				A770C8EC1F3C1DCC00C2BE84 /* CustomPresentAnimationController.swift in Sources */,
-				5EE2D97221AA80B60012EFC4 /* Modules.swift in Sources */,
 				A77C24131F5AB67C006F0F2A /* PageViewController.swift in Sources */,
 				A773F8061F398500005A9437 /* DismissViewController.swift in Sources */,
 				A773F80C1F39CB4D005A9437 /* LeadCellTableViewCell.swift in Sources */,

@@ -12,20 +12,41 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct HomeBase : Codable {
-	let metadata : Metadata?
-	let modules : [Modules]?
+struct Section : Codable {
+	let path : String?
+	let adUnitLevel2 : String?
+	let feature : Bool?
+	let featureName : String?
+	let featureCategoryID : Int?
+	let sponsored : Bool?
+	let sponsorName : String?
+	let sponsor : [String]?
+	let adSensitive : Bool?
 
 	enum CodingKeys: String, CodingKey {
 
-		case metadata = "metadata"
-		case modules = "modules"
-	}
+		case path = "path"
+		case adUnitLevel2 = "adUnitLevel2"
+		case feature = "feature"
+		case featureName = "featureName"
+		case featureCategoryID = "featureCategoryID"
+		case sponsored = "sponsored"
+		case sponsorName = "sponsorName"
+		case sponsor = "sponsor"
+		case adSensitive = "adSensitive"
+    }
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		metadata = try values.decodeIfPresent(Metadata.self, forKey: .metadata)
-		modules = try values.decodeIfPresent([Modules].self, forKey: .modules)
-	}
+		path = try values.decodeIfPresent(String.self, forKey: .path)
+		adUnitLevel2 = try values.decodeIfPresent(String.self, forKey: .adUnitLevel2)
+		feature = try values.decodeIfPresent(Bool.self, forKey: .feature)
+		featureName = try values.decodeIfPresent(String.self, forKey: .featureName)
+		featureCategoryID = try values.decodeIfPresent(Int.self, forKey: .featureCategoryID)
+		sponsored = try values.decodeIfPresent(Bool.self, forKey: .sponsored)
+		sponsorName = try values.decodeIfPresent(String.self, forKey: .sponsorName)
+		sponsor = try values.decodeIfPresent([String].self, forKey: .sponsor)
+		adSensitive = try values.decodeIfPresent(Bool.self, forKey: .adSensitive)
 
+}
 }

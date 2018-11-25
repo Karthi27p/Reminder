@@ -12,20 +12,23 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct HomeBase : Codable {
-	let metadata : Metadata?
-	let modules : [Modules]?
+struct Metadata : Codable {
+	let dateGenerated : String?
+	let location : String?
+	let wssPath : String?
 
 	enum CodingKeys: String, CodingKey {
 
-		case metadata = "metadata"
-		case modules = "modules"
+		case dateGenerated = "dateGenerated"
+		case location = "location"
+		case wssPath = "wssPath"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		metadata = try values.decodeIfPresent(Metadata.self, forKey: .metadata)
-		modules = try values.decodeIfPresent([Modules].self, forKey: .modules)
+		dateGenerated = try values.decodeIfPresent(String.self, forKey: .dateGenerated)
+		location = try values.decodeIfPresent(String.self, forKey: .location)
+		wssPath = try values.decodeIfPresent(String.self, forKey: .wssPath)
 	}
 
 }
