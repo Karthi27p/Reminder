@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="StickyNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tLB-eC-tBA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StickyNotes" rowHeight="200" id="aGI-O4-a1H" userLabel="StickyNotes Cell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aGI-O4-a1H" id="ADG-GI-szp">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="Pv9-ub-Atq" userLabel="Pin">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="OG0-l2-GTC"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1000" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZK9-kU-QR1">
+                                                    <rect key="frame" x="0.0" y="20" width="320" height="179.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Pv9-ub-Atq" firstAttribute="top" secondItem="ADG-GI-szp" secondAttribute="top" id="Kcx-lv-TQQ"/>
+                                                <constraint firstItem="ZK9-kU-QR1" firstAttribute="top" secondItem="Pv9-ub-Atq" secondAttribute="bottom" id="Pza-fv-JGq"/>
+                                                <constraint firstItem="Pv9-ub-Atq" firstAttribute="leading" secondItem="ADG-GI-szp" secondAttribute="leading" id="WFa-9Y-isq"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZK9-kU-QR1" secondAttribute="trailing" id="ZeD-rw-CUU"/>
+                                                <constraint firstItem="ZK9-kU-QR1" firstAttribute="leading" secondItem="ADG-GI-szp" secondAttribute="leading" id="jMQ-Jt-nFM"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pv9-ub-Atq" secondAttribute="trailing" id="kzt-60-Ys1"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZK9-kU-QR1" secondAttribute="bottom" id="wwD-fo-uuU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="uQP-AG-mqq"/>
+                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="GcE-8P-IsQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tLB-eC-tBA" secondAttribute="trailing" id="44q-Hc-c53"/>
+                            <constraint firstItem="tLB-eC-tBA" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="MhU-4M-dgY"/>
+                            <constraint firstItem="tLB-eC-tBA" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="QEn-H6-fYN"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="tLB-eC-tBA" secondAttribute="bottom" id="zg8-gb-E1J"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="300"/>
+                    <connections>
+                        <outlet property="tableView" destination="tLB-eC-tBA" id="uIB-OM-wyp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.8" y="122.33883058470765"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Pin" width="44" height="31"/>
+    </resources>
+</document>
