@@ -109,6 +109,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         {
             self.performSegue(withIdentifier: "Day", sender: nil)
         }
+        if(indexPath.row == 1)
+        {
+            self.performSegue(withIdentifier: "News", sender: nil)
+        }
         if(indexPath.row == 2)
         {
             self.performSegue(withIdentifier: "Map", sender: nil)

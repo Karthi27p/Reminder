@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sSC-Fv-FXZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sSC-Fv-FXZ">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -118,6 +116,7 @@
                         <segue destination="8Jn-Hl-mSc" kind="show" identifier="Diary" id="t2u-Xq-UHd"/>
                         <segue destination="Zed-mk-oza" kind="show" identifier="AddToDiary" id="Any-fa-hk7"/>
                         <segue destination="S5U-7T-QXc" kind="show" identifier="Map" id="xao-z2-KMI"/>
+                        <segue destination="KA2-9J-OTO" kind="show" identifier="News" id="K9P-ws-7qj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -144,10 +143,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uKu-bm-DKe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="406" height="180"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="406" height="179.66666666666666"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Of Today's Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBR-Om-aMm">
-                                                    <rect key="frame" x="15" y="113" width="376" height="63"/>
+                                                    <rect key="frame" x="20" y="113" width="366" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="63" id="Uib-cz-TfK"/>
                                                     </constraints>
@@ -571,7 +570,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Scc-Wo-ny9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="179.66666666666666"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -599,7 +598,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-7a-R3f">
-                                                    <rect key="frame" x="10" y="40" width="404" height="21"/>
+                                                    <rect key="frame" x="10" y="40" width="404" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -931,8 +930,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PuW-3B-i7L">
-                                <rect key="frame" x="0.0" y="64" width="414" height="504"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PuW-3B-i7L">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -958,6 +957,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5x2-Zd-fJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1612" y="-45"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="w6N-vA-9L0">
+            <objects>
+                <viewController id="KA2-9J-OTO" customClass="NewsViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v0o-Bk-c60">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9ZW-gE-cYK">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="0rQ-pV-5wU">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0rQ-pV-5wU" id="urz-6k-ZVq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KA2-9J-OTO" id="Qzr-8y-RV8"/>
+                                    <outlet property="delegate" destination="KA2-9J-OTO" id="6Wm-Sw-a43"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9ZW-gE-cYK" firstAttribute="top" secondItem="Ims-0C-CEE" secondAttribute="top" id="6Yg-c3-oE4"/>
+                            <constraint firstItem="Ims-0C-CEE" firstAttribute="trailing" secondItem="9ZW-gE-cYK" secondAttribute="trailing" id="abS-Uj-SFq"/>
+                            <constraint firstItem="9ZW-gE-cYK" firstAttribute="leading" secondItem="Ims-0C-CEE" secondAttribute="leading" id="uh5-aN-cDh"/>
+                            <constraint firstItem="Ims-0C-CEE" firstAttribute="bottom" secondItem="9ZW-gE-cYK" secondAttribute="bottom" id="zob-I6-ZM4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ims-0C-CEE"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="9ZW-gE-cYK" id="WN5-on-8lV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JDn-WL-JTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393" y="-46"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yFM-Jp-BjK">
