@@ -12,6 +12,7 @@
 		5E5108CC21AA9ABA00C98B75 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C721AA9ABA00C98B75 /* Section.swift */; };
 		5E5108CD21AA9ABA00C98B75 /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C821AA9ABA00C98B75 /* Modules.swift */; };
 		5E5108CE21AA9ABA00C98B75 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C921AA9ABA00C98B75 /* Metadata.swift */; };
+		5E5108D021AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108CF21AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift */; };
 		5EE2D96C21AA75BA0012EFC4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */; };
 		5EE2D96E21AA7BF20012EFC4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */; };
 		A72BB1911F53F47300E674F4 /* EditEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */; };
@@ -78,6 +79,7 @@
 		5E5108C721AA9ABA00C98B75 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		5E5108C821AA9ABA00C98B75 /* Modules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
 		5E5108C921AA9ABA00C98B75 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		5E5108CF21AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLeadCellTableViewCell.swift; sourceTree = "<group>"; };
 		5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventsViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				A770C8ED1F3C1DFD00C2BE84 /* CustomInteractionController.swift */,
 				A75E02591F349CC400FB1872 /* PresentViewController.swift */,
 				A75E02461F34953500FB1872 /* Main.storyboard */,
+				5E5108CF21AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift */,
 				5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */,
 				A77C24141F5ACD92006F0F2A /* DiaryContentCell.swift */,
 				A77C240C1F5A6D0F006F0F2A /* DiaryImageCellTableViewCell.swift */,
@@ -337,6 +340,7 @@
 			files = (
 				A77C24151F5ACD92006F0F2A /* DiaryContentCell.swift in Sources */,
 				5E5108CD21AA9ABA00C98B75 /* Modules.swift in Sources */,
+				5E5108D021AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift in Sources */,
 				5E5108CB21AA9ABA00C98B75 /* Items.swift in Sources */,
 				A75AD0391F5EA158008B1237 /* AddToDiaryViewController.swift in Sources */,
 				5EE2D96E21AA7BF20012EFC4 /* NewsViewController.swift in Sources */,
