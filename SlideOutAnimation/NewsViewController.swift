@@ -8,19 +8,23 @@
 
 import UIKit
 
-class NewsViewController: UIViewController, UITableViewDataSource {
+class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+   
     enum CellType: String {
         case titleCell = "Cell"
-        case leadCell = "NewsLeadCell"
+        case leadCell = "Headline Centric"
+        case photoCentric = "Photo Centric"
     }
     
     func getCellType(indexPath: IndexPath) -> CellType {
-        switch  indexPath.row%2 {
-        //case 0:
-         //   return .titleCell
-        default:
+        switch self.homeModules[indexPath.row].template{
+        case CellType.leadCell.rawValue:
             return .leadCell
+        case CellType.photoCentric.rawValue:
+            return .photoCentric
+        default :
+            return .titleCell
         }
     }
  
@@ -53,7 +57,7 @@ class NewsViewController: UIViewController, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let type: CellType = indexPath.row == 1 ? .titleCell : self.getCellType(indexPath: indexPath)
+        let type: CellType = self.getCellType(indexPath: indexPath)
         switch type.self {
         case .titleCell:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else{
@@ -72,12 +76,33 @@ class NewsViewController: UIViewController, UITableViewDataSource {
             let imageData = NSData(contentsOf: imageUrl!)
             cell.leadImage.image = UIImage.init(data: imageData! as Data)
             return cell
-        default:
-            return UITableViewCell()
+            
+        case .photoCentric:
+            guard let photoCentricTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PhotoCentric") as? PhotoCentricTableViewCell, let items : [Items] = homeModules[indexPath.row].items  else {
+                return UITableViewCell()
+            }
+            photoCentricTableViewCell.sectionTitle.text = self.homeModules[indexPath.row].title
+            photoCentricTableViewCell.homeContentArray = items
+            photoCentricTableViewCell.collectionView.delegate = photoCentricTableViewCell
+            photoCentricTableViewCell.collectionView.dataSource = photoCentricTableViewCell
+            photoCentricTableViewCell.collectionView.reloadData()
+            return photoCentricTableViewCell
+        
         }
         
 }
-    /*
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        let type: CellType = self.getCellType(indexPath: indexPath)
+        switch type.self {
+        case .titleCell:
+            return 20.0
+        case .leadCell:
+            return 300.0
+        case .photoCentric:
+            return 360.0
+        }
+    }    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

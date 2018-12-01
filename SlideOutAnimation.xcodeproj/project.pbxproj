@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E480F4E21B26E280016DEF6 /* PhotoCentricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E480F4D21B26E280016DEF6 /* PhotoCentricTableViewCell.swift */; };
+		5E480F5021B273280016DEF6 /* PhotoCentricCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E480F4F21B273280016DEF6 /* PhotoCentricCollectionViewCell.swift */; };
 		5E5108CA21AA9ABA00C98B75 /* HomeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C521AA9ABA00C98B75 /* HomeBase.swift */; };
 		5E5108CB21AA9ABA00C98B75 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C621AA9ABA00C98B75 /* Items.swift */; };
 		5E5108CC21AA9ABA00C98B75 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C721AA9ABA00C98B75 /* Section.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E480F4D21B26E280016DEF6 /* PhotoCentricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCentricTableViewCell.swift; sourceTree = "<group>"; };
+		5E480F4F21B273280016DEF6 /* PhotoCentricCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCentricCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E5108C521AA9ABA00C98B75 /* HomeBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBase.swift; sourceTree = "<group>"; };
 		5E5108C621AA9ABA00C98B75 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		5E5108C721AA9ABA00C98B75 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				A770C8ED1F3C1DFD00C2BE84 /* CustomInteractionController.swift */,
 				A75E02591F349CC400FB1872 /* PresentViewController.swift */,
 				A75E02461F34953500FB1872 /* Main.storyboard */,
+				5E480F4F21B273280016DEF6 /* PhotoCentricCollectionViewCell.swift */,
+				5E480F4D21B26E280016DEF6 /* PhotoCentricTableViewCell.swift */,
 				5E5108CF21AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift */,
 				5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */,
 				A77C24141F5ACD92006F0F2A /* DiaryContentCell.swift */,
@@ -341,6 +347,8 @@
 				A77C24151F5ACD92006F0F2A /* DiaryContentCell.swift in Sources */,
 				5E5108CD21AA9ABA00C98B75 /* Modules.swift in Sources */,
 				5E5108D021AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift in Sources */,
+				5E480F5021B273280016DEF6 /* PhotoCentricCollectionViewCell.swift in Sources */,
+				5E480F4E21B26E280016DEF6 /* PhotoCentricTableViewCell.swift in Sources */,
 				5E5108CB21AA9ABA00C98B75 /* Items.swift in Sources */,
 				A75AD0391F5EA158008B1237 /* AddToDiaryViewController.swift in Sources */,
 				5EE2D96E21AA7BF20012EFC4 /* NewsViewController.swift in Sources */,
