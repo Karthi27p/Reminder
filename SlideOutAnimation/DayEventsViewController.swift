@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
-class DayEventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
+class DayEventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate, GADBannerViewDelegate {
     var listOfEvents : [NSManagedObject] = []
     static let dayEventObj = DayEventsViewController()
     @IBOutlet var tableView: UITableView!
@@ -30,10 +31,17 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     let kWidthImageFull = UIScreen.main.bounds.width
     let cellArray = ["LeadCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell"];
+    var bannerView : GADBannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self as UINavigationControllerDelegate
         self.updateUserSelectedImage()
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        addBannerViewToView(bannerView)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLeadImage), name: .updateImage, object: nil)
         //NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: .reload, object: nil)
         self.minimizedImageView.isHidden = true
@@ -247,6 +255,35 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
     func updateLeadImage(_notification: Notification)
     {
         self .updateUserSelectedImage()
+    }
+    
+    //Banner Ad delegate
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("Ad received")
+        addBannerViewToView(bannerView)
+    }
+    
+    //Add banner ad
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
     }
     
 }

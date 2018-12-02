@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
-class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate {
+class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, GADInterstitialDelegate {
     var pageIndex : Int = 0
     var titleArray : Array<Any> = []
     var contentArray : Array<Any> = []
@@ -17,6 +18,7 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
     var diaryItems : [NSManagedObject] = []
     var contentHeight : CGFloat = 0
     var contentDeleted = false
+    var interstitial: GADInterstitial!
     @IBOutlet var animatedImageViewHeightConstraint: NSLayoutConstraint!
 
     @IBOutlet var tableView: UITableView!
@@ -31,14 +33,22 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         navigationController?.delegate = self as UINavigationControllerDelegate
          self.animatedImageViewWidthConstraint.constant = self.imageViewWidth
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        interstitial = createAndLoadInterstitial()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
-        
         fetchDataFromSQLite()
         self.tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if interstitial.isReady && pageIndex%2 == 0{
+            interstitial.present(fromRootViewController: self)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -194,6 +204,51 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
             print("\(error)")
         }
     }
+    
+    // Interstitial ad
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    //interstetail ad delegate methods
+    
+    /// Tells the delegate the interstitial had been animated off the screen.
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
+    }
+
+    
+    /// Tells the delegate an ad request succeeded.
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        print("interstitialDidReceiveAd")
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+        print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that an interstitial will be presented.
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        print("interstitialWillPresentScreen")
+    }
+    
+    /// Tells the delegate the interstitial is to be animated off the screen.
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+        print("interstitialWillDismissScreen")
+    }
+    
+    
+    /// Tells the delegate that a user click will open another app
+    /// (such as the App Store), backgrounding the current app.
+    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+        print("interstitialWillLeaveApplication")
+    }
+    
     
 //    func getDiaryContents(titleArray : Array<Any>, contentArray : Array<Any>, imageArray : Array<Any>)
 //    {
