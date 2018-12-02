@@ -49,6 +49,8 @@
 		A77C24131F5AB67C006F0F2A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C24121F5AB67C006F0F2A /* PageViewController.swift */; };
 		A77C24151F5ACD92006F0F2A /* DiaryContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C24141F5ACD92006F0F2A /* DiaryContentCell.swift */; };
 		A7F0E2D41F9226AA00E0A7EC /* SearchPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F0E2D31F92252700E0A7EC /* SearchPlacesViewController.swift */; };
+		BDBEA17AF4344E06B9E70418 /* Pods_SlideOutAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9AF2C41D89B85A74BD3C78 /* Pods_SlideOutAnimation.framework */; };
+		DB86884C47ABA033CE587785 /* Pods_StickyNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA3113F54BEEE9C8BBE1750 /* Pods_StickyNotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3584EF350AD74165FC87A2C1 /* Pods-SlideOutAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideOutAnimation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlideOutAnimation/Pods-SlideOutAnimation.debug.xcconfig"; sourceTree = "<group>"; };
+		4AA3113F54BEEE9C8BBE1750 /* Pods_StickyNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickyNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E480F4D21B26E280016DEF6 /* PhotoCentricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCentricTableViewCell.swift; sourceTree = "<group>"; };
 		5E480F4F21B273280016DEF6 /* PhotoCentricCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCentricCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E5108C521AA9ABA00C98B75 /* HomeBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBase.swift; sourceTree = "<group>"; };
@@ -86,6 +90,9 @@
 		5E5108CF21AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLeadCellTableViewCell.swift; sourceTree = "<group>"; };
 		5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		610E6FC586D6D9576D456EA5 /* Pods-StickyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNotes/Pods-StickyNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		6F15BB3DBAAE217701135813 /* Pods-SlideOutAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideOutAnimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideOutAnimation/Pods-SlideOutAnimation.release.xcconfig"; sourceTree = "<group>"; };
+		A5959E01D10FDDDCECD42953 /* Pods-StickyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNotes/Pods-StickyNotes.release.xcconfig"; sourceTree = "<group>"; };
 		A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventsViewController.swift; sourceTree = "<group>"; };
 		A732B3E01F517F7500660C15 /* SlideOutAnimation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlideOutAnimation.entitlements; sourceTree = "<group>"; };
 		A732B3E11F517F8A00660C15 /* StickyNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StickyNotes.entitlements; sourceTree = "<group>"; };
@@ -121,6 +128,7 @@
 		A77C24121F5AB67C006F0F2A /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A77C24141F5ACD92006F0F2A /* DiaryContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryContentCell.swift; sourceTree = "<group>"; };
 		A7F0E2D31F92252700E0A7EC /* SearchPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesViewController.swift; sourceTree = "<group>"; };
+		CA9AF2C41D89B85A74BD3C78 /* Pods_SlideOutAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlideOutAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDBEA17AF4344E06B9E70418 /* Pods_SlideOutAnimation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7657C121F3F245B00A6EF96 /* NotificationCenter.framework in Frameworks */,
+				DB86884C47ABA033CE587785 /* Pods_StickyNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +159,7 @@
 				A7657C131F3F245B00A6EF96 /* StickyNotes */,
 				A7657C101F3F245B00A6EF96 /* Frameworks */,
 				A75E02401F34953400FB1872 /* Products */,
+				F93E780945212556C01A2265 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				A7657C111F3F245B00A6EF96 /* NotificationCenter.framework */,
+				CA9AF2C41D89B85A74BD3C78 /* Pods_SlideOutAnimation.framework */,
+				4AA3113F54BEEE9C8BBE1750 /* Pods_StickyNotes.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,6 +238,17 @@
 			path = StickyNotes;
 			sourceTree = "<group>";
 		};
+		F93E780945212556C01A2265 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3584EF350AD74165FC87A2C1 /* Pods-SlideOutAnimation.debug.xcconfig */,
+				6F15BB3DBAAE217701135813 /* Pods-SlideOutAnimation.release.xcconfig */,
+				610E6FC586D6D9576D456EA5 /* Pods-StickyNotes.debug.xcconfig */,
+				A5959E01D10FDDDCECD42953 /* Pods-StickyNotes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A75E02541F34953500FB1872 /* Build configuration list for PBXNativeTarget "SlideOutAnimation" */;
 			buildPhases = (
+				AE1E30127278017B3EF13298 /* [CP] Check Pods Manifest.lock */,
 				A75E023B1F34953400FB1872 /* Sources */,
 				A75E023C1F34953400FB1872 /* Frameworks */,
 				A75E023D1F34953400FB1872 /* Resources */,
@@ -251,6 +276,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7657C1D1F3F245B00A6EF96 /* Build configuration list for PBXNativeTarget "StickyNotes" */;
 			buildPhases = (
+				597DB87B679DE7231458EE1B /* [CP] Check Pods Manifest.lock */,
 				A7657C0B1F3F245B00A6EF96 /* Sources */,
 				A7657C0C1F3F245B00A6EF96 /* Frameworks */,
 				A7657C0D1F3F245B00A6EF96 /* Resources */,
@@ -338,6 +364,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		597DB87B679DE7231458EE1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StickyNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE1E30127278017B3EF13298 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlideOutAnimation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A75E023B1F34953400FB1872 /* Sources */ = {
@@ -522,6 +595,7 @@
 		};
 		A75E02551F34953500FB1872 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3584EF350AD74165FC87A2C1 /* Pods-SlideOutAnimation.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -539,6 +613,7 @@
 		};
 		A75E02561F34953500FB1872 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F15BB3DBAAE217701135813 /* Pods-SlideOutAnimation.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -556,6 +631,7 @@
 		};
 		A7657C1E1F3F245B00A6EF96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 610E6FC586D6D9576D456EA5 /* Pods-StickyNotes.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 8739AQZ43Q;
 				INFOPLIST_FILE = StickyNotes/Info.plist;
@@ -572,6 +648,7 @@
 		};
 		A7657C1F1F3F245B00A6EF96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5959E01D10FDDDCECD42953 /* Pods-StickyNotes.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 8739AQZ43Q;
 				INFOPLIST_FILE = StickyNotes/Info.plist;
