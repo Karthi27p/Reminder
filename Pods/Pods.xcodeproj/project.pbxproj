@@ -16,26 +16,37 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0067D8771465CA894EE4C1F51A456816 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
 		00B122283FE6939C391132C9D0EED5DB /* Pods-StickyNotes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StickyNotes-dummy.m"; sourceTree = "<group>"; };
 		0737B379EE73ECEDAA4A60C5CA167D3B /* Pods-StickyNotes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StickyNotes.modulemap"; sourceTree = "<group>"; };
 		0EB2994F682B8366D5E114E017489CC5 /* Pods-SlideOutAnimation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SlideOutAnimation-umbrella.h"; sourceTree = "<group>"; };
 		0EE4296007A33A5625EB0290E99FDEAE /* Pods_SlideOutAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SlideOutAnimation.framework; path = "Pods-SlideOutAnimation.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1002869B0ABB066C5605273FDFD4AF70 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
 		15EB2D8AC49BEEFDC1EF9BCAD0D49625 /* Pods-StickyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StickyNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		1B578F5B6371ACD61B686630611F0AA4 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
 		23FC8F12D0D5F31D9E02F3B0C514AAC9 /* Pods-SlideOutAnimation-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SlideOutAnimation-acknowledgements.plist"; sourceTree = "<group>"; };
-		34B3EF078E22922CA6B3A3242417BB13 /* libGoogleMobileAds.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleMobileAds.a; path = Libraries/libGoogleMobileAds.a; sourceTree = "<group>"; };
 		3A7805DFFB12E18D3F9A7A9A8F4D70F9 /* Pods-StickyNotes-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StickyNotes-resources.sh"; sourceTree = "<group>"; };
 		462FC67EFEDBD23C25206CD404C15962 /* Pods-SlideOutAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SlideOutAnimation.release.xcconfig"; sourceTree = "<group>"; };
+		4BC039D318AC4F71883EF269B5000819 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		4F2014F46E176B65B3F5ED61F6A7F46E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		51D312AF116C40A33FA00A940F15AD72 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
 		55B818F32C12CED45CA4C2DA545BB5D2 /* Pods-StickyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StickyNotes.release.xcconfig"; sourceTree = "<group>"; };
 		57F7C5CDE484A70BA32C5308F9A0F0B1 /* Pods-SlideOutAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SlideOutAnimation-dummy.m"; sourceTree = "<group>"; };
+		653191352904CA0D7B60EB33EDB0C376 /* libGoogleMobileAds.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleMobileAds.a; path = Libraries/libGoogleMobileAds.a; sourceTree = "<group>"; };
 		6B216CEEF3857CEDFB04DAFCFDC5FD60 /* Pods-StickyNotes-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StickyNotes-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7A3D63E4EADF0DD40302D0F7BCE8E00F /* Pods-StickyNotes-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StickyNotes-acknowledgements.plist"; sourceTree = "<group>"; };
+		8034D9FBAB8B96E4C4E60600F7879A86 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
 		8B015E9AA71FB31AA6495A9BEF6EDD99 /* Pods-SlideOutAnimation-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SlideOutAnimation-frameworks.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E929E7C43365FD21388212A99EBBE68 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		A462360F196913878A982C505B51F97D /* Pods-SlideOutAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SlideOutAnimation.debug.xcconfig"; sourceTree = "<group>"; };
 		A61A91444B773639BADE1DD3FEAA3E10 /* Pods_StickyNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StickyNotes.framework; path = "Pods-StickyNotes.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED7D10EB82280EAAA6C50C96FBCE173 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
+		C5CDE4B96ABA6E0F177143EF4B92CA2C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		C68F98075ACF80A671EEE5EA2A785881 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
+		C7A7DF6CFDE3A89A6DAB7CD360B7974F /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
 		CD52E9FF9B76AC1A257323615FDBAE54 /* Pods-StickyNotes-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StickyNotes-umbrella.h"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DC06C9DCC488401883E597878EA11D55 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 		E2BC4604E934DA6746F089ADDEF4D75F /* Pods-SlideOutAnimation-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SlideOutAnimation-resources.sh"; sourceTree = "<group>"; };
 		F2A1CF63732BA03D670E5EAF58FDB9D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F314A81E626AA57ACDCB82BC03AE73FC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +74,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		027E9DE647BE55694384BAE3DE902356 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BC039D318AC4F71883EF269B5000819 /* GoogleMobileAds.framework */,
+				653191352904CA0D7B60EB33EDB0C376 /* libGoogleMobileAds.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		02A7F044355E0E37D84D102F4C2BFFA3 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				DC06C9DCC488401883E597878EA11D55 /* FABAttributes.h */,
+				51D312AF116C40A33FA00A940F15AD72 /* Fabric.h */,
+				D440AC702182065EBDA22A8ADECE2265 /* Frameworks */,
+			);
+			name = Fabric;
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		052A2FE2524436A2A0576784EEB37B50 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				C68F98075ACF80A671EEE5EA2A785881 /* ANSCompatibility.h */,
+				0067D8771465CA894EE4C1F51A456816 /* Answers.h */,
+				1002869B0ABB066C5605273FDFD4AF70 /* CLSAttributes.h */,
+				1B578F5B6371ACD61B686630611F0AA4 /* CLSLogging.h */,
+				8034D9FBAB8B96E4C4E60600F7879A86 /* CLSReport.h */,
+				C7A7DF6CFDE3A89A6DAB7CD360B7974F /* CLSStackFrame.h */,
+				AED7D10EB82280EAAA6C50C96FBCE173 /* Crashlytics.h */,
+				801D5FCBC283705F639FCD1FEAC3A79D /* Frameworks */,
+			);
+			name = Crashlytics;
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
 		0EBC650BCCC127E5D058DFD33CD158F8 /* Pods-SlideOutAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +136,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		6BF7082D8DB48C99C315FE9D115E1B3B /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				027E9DE647BE55694384BAE3DE902356 /* Frameworks */,
+			);
+			name = "Google-Mobile-Ads-SDK";
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
 		743DDAACA13D413512E9E0142A45FC08 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,27 +168,28 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				820FBBDA65C5B1A6A4C379A893C27235 /* Pods */,
+				A98E770F75560939087969303E97D0FF /* Pods */,
 				79D0C65A4780FBB12C8D39591E0F8426 /* Products */,
 				743DDAACA13D413512E9E0142A45FC08 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		820FBBDA65C5B1A6A4C379A893C27235 /* Pods */ = {
+		801D5FCBC283705F639FCD1FEAC3A79D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B2D755A60549F10C3C21F9AFC87AA432 /* Google-Mobile-Ads-SDK */,
+				4F2014F46E176B65B3F5ED61F6A7F46E /* Crashlytics.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B2D755A60549F10C3C21F9AFC87AA432 /* Google-Mobile-Ads-SDK */ = {
+		A98E770F75560939087969303E97D0FF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E729DC941541568B32695DC1C327B163 /* Frameworks */,
+				052A2FE2524436A2A0576784EEB37B50 /* Crashlytics */,
+				02A7F044355E0E37D84D102F4C2BFFA3 /* Fabric */,
+				6BF7082D8DB48C99C315FE9D115E1B3B /* Google-Mobile-Ads-SDK */,
 			);
-			name = "Google-Mobile-Ads-SDK";
-			path = "Google-Mobile-Ads-SDK";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -160,11 +217,10 @@
 			path = "Target Support Files/Pods-StickyNotes";
 			sourceTree = "<group>";
 		};
-		E729DC941541568B32695DC1C327B163 /* Frameworks */ = {
+		D440AC702182065EBDA22A8ADECE2265 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9E929E7C43365FD21388212A99EBBE68 /* GoogleMobileAds.framework */,
-				34B3EF078E22922CA6B3A3242417BB13 /* libGoogleMobileAds.a */,
+				C5CDE4B96ABA6E0F177143EF4B92CA2C /* Fabric.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

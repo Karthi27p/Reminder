@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import UserNotifications
 import GoogleMobileAds
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -20,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     let vc = ViewController()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
+        Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
             if !accepted {
                 print("Notification access denied.")

@@ -1,16 +1,25 @@
 PODS:
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
   - Google-Mobile-Ads-SDK (7.36.0)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - Google-Mobile-Ads-SDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
     - Google-Mobile-Ads-SDK
 
 SPEC CHECKSUMS:
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Google-Mobile-Ads-SDK: 5bb4d2cea811842e104a24780caef63b4808e1bd
 
-PODFILE CHECKSUM: 8712675175a33bb41d5b847203cea0b618247166
+PODFILE CHECKSUM: 70c402bd653d814fb0d560bdbe9b35fd97f5de73
 
 COCOAPODS: 1.5.3
