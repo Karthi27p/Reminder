@@ -15,9 +15,15 @@
 		5E5108CD21AA9ABA00C98B75 /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C821AA9ABA00C98B75 /* Modules.swift */; };
 		5E5108CE21AA9ABA00C98B75 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108C921AA9ABA00C98B75 /* Metadata.swift */; };
 		5E5108D021AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5108CF21AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift */; };
+		5E6AA27221BC2508007C9A58 /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AA27121BC2508007C9A58 /* news.png */; };
+		5E6AA27421BC2510007C9A58 /* events.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AA27321BC2510007C9A58 /* events.png */; };
+		5E6AA27621BC2519007C9A58 /* diary.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AA27521BC2519007C9A58 /* diary.png */; };
+		5E6AA27821BC2520007C9A58 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AA27721BC251F007C9A58 /* map.png */; };
+		5E6AA27A21BC2C39007C9A58 /* AppIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */; };
+		5E6AA27C21BC3C58007C9A58 /* DontForget.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AA27B21BC3C58007C9A58 /* DontForget.png */; };
 		5EE2D96C21AA75BA0012EFC4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */; };
 		5EE2D96E21AA7BF20012EFC4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */; };
-		A72BB1911F53F47300E674F4 /* EditEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */; };
+		A72BB1911F53F47300E674F4 /* AppIconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BB1901F53F47300E674F4 /* AppIconsViewController.swift */; };
 		A75AD0391F5EA158008B1237 /* AddToDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AD0381F5EA158008B1237 /* AddToDiaryViewController.swift */; };
 		A75E02431F34953500FB1872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E02421F34953500FB1872 /* AppDelegate.swift */; };
 		A75E02451F34953500FB1872 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E02441F34953500FB1872 /* ViewController.swift */; };
@@ -27,7 +33,6 @@
 		A75E02501F34953500FB1872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75E024E1F34953500FB1872 /* LaunchScreen.storyboard */; };
 		A75E02581F349BD800FB1872 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E02571F349BD800FB1872 /* MenuViewController.swift */; };
 		A75E025A1F349CC400FB1872 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E02591F349CC400FB1872 /* PresentViewController.swift */; };
-		A7657C081F3EFD7500A6EF96 /* Reminder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A7657C071F3EFD7500A6EF96 /* Reminder.jpeg */; };
 		A7657C0A1F3EFE7D00A6EF96 /* reminder.png in Resources */ = {isa = PBXBuildFile; fileRef = A7657C091F3EFE7D00A6EF96 /* reminder.png */; };
 		A7657C121F3F245B00A6EF96 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7657C111F3F245B00A6EF96 /* NotificationCenter.framework */; };
 		A7657C151F3F245B00A6EF96 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7657C141F3F245B00A6EF96 /* TodayViewController.swift */; };
@@ -88,12 +93,18 @@
 		5E5108C821AA9ABA00C98B75 /* Modules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
 		5E5108C921AA9ABA00C98B75 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		5E5108CF21AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLeadCellTableViewCell.swift; sourceTree = "<group>"; };
+		5E6AA27121BC2508007C9A58 /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
+		5E6AA27321BC2510007C9A58 /* events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = events.png; sourceTree = "<group>"; };
+		5E6AA27521BC2519007C9A58 /* diary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diary.png; sourceTree = "<group>"; };
+		5E6AA27721BC251F007C9A58 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E6AA27B21BC3C58007C9A58 /* DontForget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DontForget.png; sourceTree = "<group>"; };
 		5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		610E6FC586D6D9576D456EA5 /* Pods-StickyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNotes/Pods-StickyNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		6F15BB3DBAAE217701135813 /* Pods-SlideOutAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlideOutAnimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlideOutAnimation/Pods-SlideOutAnimation.release.xcconfig"; sourceTree = "<group>"; };
 		A5959E01D10FDDDCECD42953 /* Pods-StickyNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNotes/Pods-StickyNotes.release.xcconfig"; sourceTree = "<group>"; };
-		A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventsViewController.swift; sourceTree = "<group>"; };
+		A72BB1901F53F47300E674F4 /* AppIconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconsViewController.swift; sourceTree = "<group>"; };
 		A732B3E01F517F7500660C15 /* SlideOutAnimation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlideOutAnimation.entitlements; sourceTree = "<group>"; };
 		A732B3E11F517F8A00660C15 /* StickyNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StickyNotes.entitlements; sourceTree = "<group>"; };
 		A75AD0381F5EA158008B1237 /* AddToDiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDiaryViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +118,6 @@
 		A75E02511F34953500FB1872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75E02571F349BD800FB1872 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A75E02591F349CC400FB1872 /* PresentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
-		A7657C071F3EFD7500A6EF96 /* Reminder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Reminder.jpeg; sourceTree = "<group>"; };
 		A7657C091F3EFE7D00A6EF96 /* reminder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reminder.png; sourceTree = "<group>"; };
 		A7657C0F1F3F245B00A6EF96 /* StickyNotes.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StickyNotes.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7657C111F3F245B00A6EF96 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -190,6 +200,7 @@
 				A770C8ED1F3C1DFD00C2BE84 /* CustomInteractionController.swift */,
 				A75E02591F349CC400FB1872 /* PresentViewController.swift */,
 				A75E02461F34953500FB1872 /* Main.storyboard */,
+				5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */,
 				5E480F4F21B273280016DEF6 /* PhotoCentricCollectionViewCell.swift */,
 				5E480F4D21B26E280016DEF6 /* PhotoCentricTableViewCell.swift */,
 				5E5108CF21AA9E1300C98B75 /* NewsLeadCellTableViewCell.swift */,
@@ -201,13 +212,17 @@
 				5E5108C921AA9ABA00C98B75 /* Metadata.swift */,
 				5E5108C821AA9ABA00C98B75 /* Modules.swift */,
 				5E5108C721AA9ABA00C98B75 /* Section.swift */,
-				A72BB1901F53F47300E674F4 /* EditEventsViewController.swift */,
+				A72BB1901F53F47300E674F4 /* AppIconsViewController.swift */,
 				A773F80B1F39CB4D005A9437 /* LeadCellTableViewCell.swift */,
 				A773F80D1F39D8B9005A9437 /* DayEventsViewController.swift */,
 				A77C240A1F5A6C66006F0F2A /* DiaryViewController.swift */,
 				A75E024C1F34953500FB1872 /* Assets.xcassets */,
-				A7657C071F3EFD7500A6EF96 /* Reminder.jpeg */,
+				5E6AA27521BC2519007C9A58 /* diary.png */,
+				5E6AA27721BC251F007C9A58 /* map.png */,
+				5E6AA27121BC2508007C9A58 /* news.png */,
 				A7657C091F3EFE7D00A6EF96 /* reminder.png */,
+				5E6AA27B21BC3C58007C9A58 /* DontForget.png */,
+				5E6AA27321BC2510007C9A58 /* events.png */,
 				A75E024E1F34953500FB1872 /* LaunchScreen.storyboard */,
 				A75E02511F34953500FB1872 /* Info.plist */,
 				A75E02491F34953500FB1872 /* SlideOutAnimation.xcdatamodeld */,
@@ -347,11 +362,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6AA27821BC2520007C9A58 /* map.png in Resources */,
 				A75E02501F34953500FB1872 /* LaunchScreen.storyboard in Resources */,
+				5E6AA27421BC2510007C9A58 /* events.png in Resources */,
 				A75E024D1F34953500FB1872 /* Assets.xcassets in Resources */,
+				5E6AA27221BC2508007C9A58 /* news.png in Resources */,
+				5E6AA27C21BC3C58007C9A58 /* DontForget.png in Resources */,
+				5E6AA27621BC2519007C9A58 /* diary.png in Resources */,
 				A75E02481F34953500FB1872 /* Main.storyboard in Resources */,
 				A7657C0A1F3EFE7D00A6EF96 /* reminder.png in Resources */,
-				A7657C081F3EFD7500A6EF96 /* Reminder.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +465,7 @@
 				A770C8EA1F3C1DAC00C2BE84 /* CustomNavigationController.swift in Sources */,
 				A75E024B1F34953500FB1872 /* SlideOutAnimation.xcdatamodeld in Sources */,
 				A773F80E1F39D8B9005A9437 /* DayEventsViewController.swift in Sources */,
+				5E6AA27A21BC2C39007C9A58 /* AppIconCollectionViewCell.swift in Sources */,
 				5E5108CC21AA9ABA00C98B75 /* Section.swift in Sources */,
 				A773F80A1F39C184005A9437 /* CustomLayout.swift in Sources */,
 				5EE2D96C21AA75BA0012EFC4 /* ApiService.swift in Sources */,
@@ -453,7 +473,7 @@
 				A75E025A1F349CC400FB1872 /* PresentViewController.swift in Sources */,
 				A770C8E81F3C1D5200C2BE84 /* AddEventsViewController.swift in Sources */,
 				5E5108CE21AA9ABA00C98B75 /* Metadata.swift in Sources */,
-				A72BB1911F53F47300E674F4 /* EditEventsViewController.swift in Sources */,
+				A72BB1911F53F47300E674F4 /* AppIconsViewController.swift in Sources */,
 				A75E02431F34953500FB1872 /* AppDelegate.swift in Sources */,
 				5E5108CA21AA9ABA00C98B75 /* HomeBase.swift in Sources */,
 				A75E02581F349BD800FB1872 /* MenuViewController.swift in Sources */,

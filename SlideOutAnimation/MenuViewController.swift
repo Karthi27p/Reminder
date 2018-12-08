@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let menuItems = ["Scheduled Events", "Add Events", "Edit Events", "Sticky Notes", "Add To Diary"]
+    let menuItems = ["Scheduled Events", "Add Events", "App Icons", "Sticky Notes", "Add To Diary"]
     @IBOutlet var tableView: UITableView!
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
