@@ -620,7 +620,7 @@
 				DEVELOPMENT_TEAM = 8739AQZ43Q;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SlideOutAnimation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -639,7 +639,7 @@
 				DEVELOPMENT_TEAM = 8739AQZ43Q;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SlideOutAnimation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";

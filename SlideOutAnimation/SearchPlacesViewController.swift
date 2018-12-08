@@ -9,19 +9,25 @@
 import Foundation
 import UIKit
 import MapKit
+import Contacts
 
-class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavigationControllerDelegate {
+class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavigationControllerDelegate, MKMapViewDelegate{
     
     @IBOutlet weak var mapView: MKMapView!
     @IBAction func searchButtonPressed(_ sender: Any) {
         let searchViewController = UISearchController(searchResultsController: nil)
         searchViewController.searchBar.delegate = self;
         present(searchViewController, animated: true, completion: nil)
-        
-        
-    }
+            }
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         navigationController?.delegate = self
+        self.mapView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.checkLocationAuthorizationStatus()
     }
     let customNavigationViewController = CustomNavigationController()
     let customInteractionViewController = CustomInteractionController()
@@ -79,16 +85,45 @@ class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavig
                 let region = MKCoordinateRegionMake(coordinate, span)
                 self.mapView.setRegion(region, animated:true)
                 
-                
-                
-                
-                
             }
         }
-        
-        
-        
-        
-        
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? MKPointAnnotation else {
+            return nil
+        }
+        let identifier = "Annotation"
+        var annotationView: MKMarkerAnnotationView
+        if let dequedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
+            dequedView.annotation = annotation
+            annotationView = dequedView
+        } else {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView.canShowCallout = true
+            annotationView.calloutOffset = CGPoint(x: -5, y: 5)
+            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as? MKPointAnnotation
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        let mapItem : MKMapItem
+        let addressDict = [CNPostalAddressStreetKey: location?.title]
+        let placemark = MKPlacemark(coordinate: (location?.coordinate)!, addressDictionary: addressDict as [String : Any])
+        mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = location?.title ?? ""
+        mapItem.openInMaps(launchOptions: launchOptions)
+    }
+    
+    func checkLocationAuthorizationStatus() {
+        if CLLocationManager.authorizationStatus() == .authorizedAlways {
+            mapView.showsUserLocation = true
+        } else {
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
+    
 }
