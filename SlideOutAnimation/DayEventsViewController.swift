@@ -18,6 +18,8 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         performSegue(withIdentifier: "Present", sender: (Any).self)
     }
     @IBOutlet var firstEventLabel: UILabel!
+    @IBOutlet weak var watchAndReadTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet var animatedImageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet var animatedImageViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet var watchAndReadHeightConstraint: NSLayoutConstraint!
@@ -30,7 +32,6 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         case OrdinaryCell = "OrdinaryCell"
     }
     let kWidthImageFull = UIScreen.main.bounds.width
-    let cellArray = ["LeadCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell","OrdinaryCell"];
     var bannerView : GADBannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +81,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if(cellArray[indexPath.row] == "LeadCell")
+        if(self.getCellType(indexPath: indexPath as NSIndexPath) == .LeadCell)
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeadCell") as! LeadCellTableViewCell
             cell.firstEventLabel.text = AddEventsViewController.addEventsObj.eventNamesArray[indexPath.row]
@@ -284,6 +285,15 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
                                 multiplier: 1,
                                 constant: 0)
             ])
+    }
+    
+    func getCellType(indexPath: NSIndexPath) -> cellType {
+        switch indexPath.row {
+        case 0:
+            return .LeadCell
+        default:
+            return .OrdinaryCell
+        }
     }
     
 }
