@@ -21,6 +21,7 @@
 		5E6AA27821BC2520007C9A58 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AA27721BC251F007C9A58 /* map.png */; };
 		5E6AA27A21BC2C39007C9A58 /* AppIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */; };
 		5E6AA27C21BC3C58007C9A58 /* DontForget.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AA27B21BC3C58007C9A58 /* DontForget.png */; };
+		5E6BF88221BD2318007583DD /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BF88121BD2318007583DD /* PaddingLabel.swift */; };
 		5EE2D96C21AA75BA0012EFC4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */; };
 		5EE2D96E21AA7BF20012EFC4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */; };
 		A72BB1911F53F47300E674F4 /* AppIconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BB1901F53F47300E674F4 /* AppIconsViewController.swift */; };
@@ -99,6 +100,7 @@
 		5E6AA27721BC251F007C9A58 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E6AA27B21BC3C58007C9A58 /* DontForget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DontForget.png; sourceTree = "<group>"; };
+		5E6BF88121BD2318007583DD /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		5EE2D96D21AA7BF20012EFC4 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		610E6FC586D6D9576D456EA5 /* Pods-StickyNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StickyNotes/Pods-StickyNotes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				A770C8ED1F3C1DFD00C2BE84 /* CustomInteractionController.swift */,
 				A75E02591F349CC400FB1872 /* PresentViewController.swift */,
 				A75E02461F34953500FB1872 /* Main.storyboard */,
+				5E6BF88121BD2318007583DD /* PaddingLabel.swift */,
 				5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */,
 				5E480F4F21B273280016DEF6 /* PhotoCentricCollectionViewCell.swift */,
 				5E480F4D21B26E280016DEF6 /* PhotoCentricTableViewCell.swift */,
@@ -475,6 +478,7 @@
 				5E5108CE21AA9ABA00C98B75 /* Metadata.swift in Sources */,
 				A72BB1911F53F47300E674F4 /* AppIconsViewController.swift in Sources */,
 				A75E02431F34953500FB1872 /* AppDelegate.swift in Sources */,
+				5E6BF88221BD2318007583DD /* PaddingLabel.swift in Sources */,
 				5E5108CA21AA9ABA00C98B75 /* HomeBase.swift in Sources */,
 				A75E02581F349BD800FB1872 /* MenuViewController.swift in Sources */,
 				A7657C231F3F29AF00A6EF96 /* StickyNotesViewController.swift in Sources */,

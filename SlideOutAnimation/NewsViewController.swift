@@ -10,20 +10,21 @@ import UIKit
 import GoogleMobileAds
 
 
-class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate {
+class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate, UINavigationControllerDelegate {
     
     var bannerView : GADBannerView!
     enum CellType: String {
         case titleCell = "Cell"
         case leadCell = "Headline Centric"
         case photoCentric = "Photo Centric"
+        case storyListwithLeadImage = "Story List with Lead Image"
     }
     
     func getCellType(indexPath: IndexPath) -> CellType {
         switch self.homeModules[indexPath.row].template{
         case CellType.leadCell.rawValue:
             return .leadCell
-        case CellType.photoCentric.rawValue:
+        case CellType.photoCentric.rawValue, CellType.storyListwithLeadImage.rawValue:
             return .photoCentric
         default :
             return .titleCell
@@ -38,6 +39,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
+        navigationController?.delegate = self
         bannerView.delegate = self
         bannerView.load(GADRequest())
         addBannerViewToView(bannerView)
@@ -58,6 +60,23 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         // Do any additional setup after loading the view.
     }
+    
+    let customNavigationViewController = CustomNavigationController()
+    let customInteractionViewController = CustomInteractionController()
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push
+        {
+            customInteractionViewController.attachToViewController(viewController: toVC)
+        }
+        if operation == .pop
+        {
+            self.navigationController?.delegate = nil;
+        }
+        customNavigationViewController.reverse = (operation == .pop)
+        return customNavigationViewController as UIViewControllerAnimatedTransitioning
+    }
+    
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.homeModules.count
@@ -85,7 +104,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.leadImage.image = UIImage.init(data: imageData! as Data)
             return cell
             
-        case .photoCentric:
+        case .photoCentric ,.storyListwithLeadImage:
             guard let photoCentricTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PhotoCentric") as? PhotoCentricTableViewCell, let items : [Items] = homeModules[indexPath.row].items  else {
                 return UITableViewCell()
             }
@@ -107,7 +126,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return 20.0
         case .leadCell:
             return 300.0
-        case .photoCentric:
+        case .photoCentric, .storyListwithLeadImage:
             return 360.0
         }
     }

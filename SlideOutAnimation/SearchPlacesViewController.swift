@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 import MapKit
 import Contacts
+import GoogleMobileAds
 
-class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavigationControllerDelegate, MKMapViewDelegate{
+class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavigationControllerDelegate, MKMapViewDelegate, GADBannerViewDelegate{
     
     @IBOutlet weak var mapView: MKMapView!
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -20,9 +21,17 @@ class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavig
         present(searchViewController, animated: true, completion: nil)
             }
     let locationManager = CLLocationManager()
+     var bannerView : GADBannerView!
     override func viewDidLoad() {
         navigationController?.delegate = self
         self.mapView.delegate = self
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        navigationController?.delegate = self
+        bannerView.delegate = self
+        bannerView.load(GADRequest())
+        addBannerViewToView(bannerView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -124,6 +133,63 @@ class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavig
         } else {
             locationManager.requestAlwaysAuthorization()
         }
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
+    
+    //Banner Ad Delegate methods
+    
+    /// Tells the delegate an ad request loaded an ad.
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
+        print("adViewDidReceiveAd")
+    }
+    
+    /// Tells the delegate an ad request failed.
+    func adView(_ bannerView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+    
+    /// Tells the delegate that a full-screen view will be presented in response
+    /// to the user clicking on an ad.
+    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+        print("adViewWillPresentScreen")
+    }
+    
+    /// Tells the delegate that the full-screen view will be dismissed.
+    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewWillDismissScreen")
+    }
+    
+    /// Tells the delegate that the full-screen view has been dismissed.
+    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+        print("adViewDidDismissScreen")
+    }
+    
+    /// Tells the delegate that a user click will open another app (such as
+    /// the App Store), backgrounding the current app.
+    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
+        print("adViewWillLeaveApplication")
     }
     
 }

@@ -54,7 +54,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         let imageView : UIImageView = cell!.viewWithTag(999) as! UIImageView
         imageView.image = #imageLiteral(resourceName: "Pin")
         let textArea : UITextView = cell!.viewWithTag(1000) as! UITextView
-        textArea.text = stickyNotes[indexPath.row] as! String
+        textArea.text = stickyNotes[indexPath.row] as? String
         return cell!
         
         

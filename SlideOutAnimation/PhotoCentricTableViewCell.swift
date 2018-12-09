@@ -36,7 +36,7 @@ class PhotoCentricTableViewCell: UITableViewCell, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: (UIScreen.main.bounds.size.width/2)-10.0, height: 150)
+        let size = CGSize(width: (UIScreen.main.bounds.size.width/2)-20.0, height: 150)
 
         return size
 
