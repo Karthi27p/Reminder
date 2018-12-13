@@ -20,6 +20,8 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         // Do any additional setup after loading the view.
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
         view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddToDiaryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddToDiaryViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         diaryTextView.delegate = self
         titleTextView.delegate = self
     }
@@ -85,6 +87,16 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     func dismissKeyBoard()
     {
         self.view.endEditing(true)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            self.view.frame.origin.y -= UIScreen.main.bounds.height < 586 ? keyboardSize.height - 50 : keyboardSize.height
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
     }
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
