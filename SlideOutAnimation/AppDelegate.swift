@@ -12,9 +12,10 @@ import UserNotifications
 import GoogleMobileAds
 import Fabric
 import Crashlytics
+import MessageUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MFMailComposeViewControllerDelegate {
 
     var window: UIWindow?
     var id = 0
@@ -149,8 +150,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    func scheduledBirthdayEmails(at date: Date, subject: String, to: String, body: String) {
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents(in: .current, from: date)
+        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        content.title = subject
+        content.body = body
+        content.subtitle = to
+        content.sound = UNNotificationSound.default()
+        if let path = Bundle.main.path(forResource: "reminder", ofType: "png") {
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                let attachment = try UNNotificationAttachment(identifier: "image", url: url, options: nil)
+                content.attachments = [attachment]
+            } catch {
+                print("The attachment was not loaded.")
+            }
+        }
+        content.categoryIdentifier = "myCategory"
+        let request = UNNotificationRequest(identifier: subject, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error in notification request \(error)")
+            }
+        }
+    }
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         id += 1
+        print("Title: \(response.notification.request.content.title)")
+        print("Body: \(response.notification.request.content.body)")
+
         let idString : String = String(id)
         let remaindLaterId : String = (" "+idString)
         if response.actionIdentifier == "remindTomorrow" {
@@ -159,9 +194,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             scheduleNotification(at: newDate,event:remaindLaterId, repeatValue: false)
         }
         if response.actionIdentifier == "getIn" {
+        
+            let addToDiaryVC = AddToDiaryViewController()
+            let mailComposeViewController = addToDiaryVC.configureMailComposer(mailId: [response.notification.request.content.subtitle] , subject: response.notification.request.content.title, body: response.notification.request.content.body)
+            mailComposeViewController.mailComposeDelegate = self
+            if MFMailComposeViewController.canSendMail(){
+                if((window?.rootViewController?.presentedViewController) != nil) {
+                    window?.rootViewController?.presentedViewController?.dismiss(animated: true, completion: {
+                        let navVC = self.window?.rootViewController as? UINavigationController
+                        navVC?.visibleViewController?.present(mailComposeViewController, animated: true, completion: nil)
+                    }
+                    )
+
+                } else {
+                    window?.rootViewController?.present(mailComposeViewController, animated: true, completion: nil)
+                }
+            }
+            }else{
+                print("Can't send email")
+            }
             
-            
-        }
         if response.actionIdentifier == "TextInput"
         {
             if let textResponse = response as? UNTextInputNotificationResponse {
@@ -184,9 +236,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 scheduleNotification(at: newDate,event:remaindLaterId, repeatValue: false)
             }
         }
-        
-        
-    }
+}
 
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNTextInputNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -229,6 +279,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             rootViewController.pushViewController(stickyVC, animated: true);
         }
         
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result {
+        case .cancelled:
+            print("Mail Cancelled")
+            break
+        case .saved :
+            print("Mail Saved")
+            break
+        case .failed:
+            print("Mail failed")
+            break
+        case .sent:
+            print("Mail sent")
+            break
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
     
 }

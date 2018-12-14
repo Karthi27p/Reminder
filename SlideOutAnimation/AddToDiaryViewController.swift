@@ -8,11 +8,14 @@
 
 import UIKit
 import CoreData
+import MessageUI
 
-class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
     var userSelectedImage : UIImage = #imageLiteral(resourceName: "camera")
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var toTextView: UITextView!
     @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet var diaryTextView: UITextView!
     let diaryViewController = DiaryViewController()
     override func viewDidLoad() {
@@ -39,6 +42,9 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         //PageViewController.pageViewControllerSharedInstance.imageArray.append(imageView.image!)
         let imageData = UIImagePNGRepresentation(userSelectedImage)
         self.save(title: titleTextView.text, content: diaryTextView.text, image: imageData!)
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        let selectedDate = datePicker.date
+        delegate?.scheduledBirthdayEmails(at:selectedDate , subject: titleTextView.text, to:toTextView.text, body: diaryTextView.text)
         self.titleTextView.text = "Title"
         self.titleTextView.textColor = UIColor.gray
         self.diaryTextView.text = "Enter Your Content"
@@ -153,4 +159,15 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     @IBAction func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func configureMailComposer(mailId: [String], subject: String, body: String) -> MFMailComposeViewController{
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.setToRecipients(mailId)
+        mailComposerVC.setSubject(subject)
+        mailComposerVC.addAttachmentData(UIImagePNGRepresentation(UIImage(named: "events")!)!, mimeType: "image/png", fileName: "events.png")
+        mailComposerVC.setMessageBody(body, isHTML: false)
+        return mailComposerVC
+        
+    }
+    
 }
