@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var id = 0
     var remaindLater = false
     let vc = ViewController()
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
         Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
@@ -127,7 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             content.body = "You have a remainder for"+event
             remaindLater = false
         }
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         if let path = Bundle.main.path(forResource: "reminder", ofType: "png") {
             let url = URL(fileURLWithPath: path)
             
@@ -172,8 +172,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 if(num == nil)
                 {
                     let alert = UIAlertController(title: "Sorry! Your Input Was Not Recorded!", message: "Please Enter Minutes in Number", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
                     window?.rootViewController?.present(alert, animated: true, completion: nil)
                     return
                 }

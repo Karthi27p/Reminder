@@ -26,7 +26,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         //self.contentArray = ["Content1", "Content2", "Content3", "Content4"]
         //self.imageArray = [#imageLiteral(resourceName: "page2"),#imageLiteral(resourceName: "page3"),#imageLiteral(resourceName: "page4"),#imageLiteral(resourceName: "page1")]
         self.dataSource = self
-        self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
         currentIndex = 0
     self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .trash, target: self, action:(#selector(deleteButtonClicked))), animated: true)
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else
@@ -105,7 +105,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
     }
     
-    func deleteButtonClicked()
+    @objc func deleteButtonClicked()
     {
         deleteCount += 1
         diaryViewControllerObj.contentDeleted = true
@@ -138,11 +138,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         {
             if(diaryItems.count > 2)
             {
-            self.setViewControllers([getViewControllerAtIndex(index: currentIndex)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+            self.setViewControllers([getViewControllerAtIndex(index: currentIndex)] as [UIViewController], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
             }
             else
             {
-            self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+            self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
             }
         }
         //Check in pageviewcontroller and diaryviewcontroller
@@ -174,7 +174,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         NotificationCenter.default.removeObserver(self)
     }
 
-    func disableDeleteButton()
+    @objc func disableDeleteButton()
     {
         self.navigationItem.rightBarButtonItem = nil;
     }

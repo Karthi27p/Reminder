@@ -52,7 +52,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.navigationController?.present(dayEventVC, animated: true)
             let navBar : UINavigationBar = UINavigationBar.init(frame: CGRect(x: 0.0, y:kNavigationBarY , width: (Double(UIScreen.main.bounds.size.width)), height: 64.0))
             let navItem = UINavigationItem(title: "Events")
-            let leftBarItem = UIBarButtonItem(title: "X", style: UIBarButtonItemStyle.done, target: self, action: #selector(closeButtonPresed))
+            let leftBarItem = UIBarButtonItem(title: "X", style: UIBarButtonItem.Style.done, target: self, action: #selector(closeButtonPresed))
             leftBarItem.tintColor = UIColor.black
             navItem.leftBarButtonItem = leftBarItem
             navBar.setItems([navItem], animated: true)
@@ -86,7 +86,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    func closeButtonPresed()
+    @objc func closeButtonPresed()
     {
         self.dismiss(animated: true, completion: nil)
     }

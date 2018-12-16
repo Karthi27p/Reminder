@@ -81,22 +81,25 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         
-        eventImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        eventImage.image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
         let fileManager = FileManager.default
         let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("userSelectedImage.png")
         let image = eventImage.image
         print(paths)
         pathOfImage = paths
-        let imageData = UIImagePNGRepresentation(image!)
+        let imageData = image!.pngData()
         fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
         NotificationCenter.default.post(name: .updateImage, object: nil)
         dismiss(animated: true, completion: nil)
 
     }
     
-    func dismissKeyboard()
+    @objc func dismissKeyboard()
     {
         view.endEditing(true)
     }
@@ -166,3 +169,13 @@ extension Notification.Name
     static let updateImage = Notification.Name("updateImage")
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

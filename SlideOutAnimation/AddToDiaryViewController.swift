@@ -20,8 +20,8 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         // Do any additional setup after loading the view.
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
         view.addGestureRecognizer(tap)
-        NotificationCenter.default.addObserver(self, selector: #selector(AddToDiaryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(AddToDiaryViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddToDiaryViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AddToDiaryViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         navigationController?.delegate = self
         diaryTextView.delegate = self
         titleTextView.delegate = self
@@ -36,7 +36,7 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     
     let customNavigationViewController = CustomNavigationController()
     let customInteractionViewController = CustomInteractionController()
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if operation == .push
         {
@@ -54,7 +54,7 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     //PageViewController.pageViewControllerSharedInstance.contentArray.append(diaryTextView.text)
         //PageViewController.pageViewControllerSharedInstance.titleArray.append(titleTextView.text)
         //PageViewController.pageViewControllerSharedInstance.imageArray.append(imageView.image!)
-        let imageData = UIImagePNGRepresentation(userSelectedImage)
+        let imageData = userSelectedImage.pngData()
         self.save(title: titleTextView.text, content: diaryTextView.text, image: imageData!)
         self.titleTextView.text = "Title"
         self.titleTextView.textColor = UIColor.gray
@@ -101,23 +101,26 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         textView.resignFirstResponder()
     }
     
-    func dismissKeyBoard()
+    @objc func dismissKeyBoard()
     {
         self.view.endEditing(true)
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             self.view.frame.origin.y -= UIScreen.main.bounds.height < 586 ? keyboardSize.height - 50 : keyboardSize.height
         }
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    @objc func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
     }
     
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
-        self.userSelectedImage = (info[UIImagePickerControllerOriginalImage] as? UIImage)!
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        self.userSelectedImage = (info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage)!
         dismiss(animated: true, completion: nil)
     }
     /*
@@ -170,4 +173,14 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     @IBAction func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
 }

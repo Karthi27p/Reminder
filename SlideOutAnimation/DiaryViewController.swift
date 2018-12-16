@@ -115,7 +115,7 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
  
     let customNavigationViewController = CustomNavigationController()
     let customInteractionViewController = CustomInteractionController()
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if operation == .push
         {
@@ -183,7 +183,7 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
     func calculateHeightForContentText(text : NSString) -> CGFloat
     {
         let maxLabelSize = CGSize(width: self.tableView.frame.width, height: CGFloat(MAXFLOAT))
-        let contentSize = text.boundingRect(with: maxLabelSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:[NSFontAttributeName: UIFont .systemFont(ofSize: 17.0)], context: nil)
+        let contentSize = text.boundingRect(with: maxLabelSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): UIFont .systemFont(ofSize: 17.0)]), context: nil)
         return contentSize.height+20
     }
     
@@ -266,4 +266,15 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     */
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

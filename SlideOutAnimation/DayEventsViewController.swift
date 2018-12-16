@@ -104,8 +104,8 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         return true
     }
     
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
-        if(editingStyle == UITableViewCellEditingStyle.delete)
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if(editingStyle == UITableViewCell.EditingStyle.delete)
         {
             let appdelegate = UIApplication.shared.delegate as? AppDelegate
             let managedContext = appdelegate?.persistentContainer.viewContext
@@ -210,7 +210,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     let customNavigationViewController = CustomNavigationController()
     let customInteractionViewController = CustomInteractionController()
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if operation == .push
         {
@@ -246,7 +246,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func updateLeadImage(_notification: Notification)
+    @objc func updateLeadImage(_notification: Notification)
     {
         self .updateUserSelectedImage()
     }
