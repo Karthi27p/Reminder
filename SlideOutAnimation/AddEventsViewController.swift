@@ -40,6 +40,7 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
       self.save(name: eventName.text!)
         let delegate = UIApplication.shared.delegate as? AppDelegate
         delegate?.scheduleNotification(at: selectedDate, event: eventName.text!, repeatValue:setRepeat)
+        delegate?.emailReminder = false
         self.dismiss(animated: true, completion:nil)
         AddEventsViewController.schedulePressed = true
         //NotificationCenter.default.post(name: .reload, object: nil)
@@ -57,6 +58,11 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
             
         super.viewDidLoad()
         AddEventsViewController.schedulePressed = false
+        let calender = NSCalendar.init(calendarIdentifier: .gregorian)
+            let components = NSDateComponents()
+            let currentDate = Date.init(timeIntervalSinceNow: 0)
+            let minDate = calender?.date(byAdding: components as DateComponents, to: currentDate, options: [])
+        datePicker.minimumDate = minDate
         self.navigationController?.navigationBar.topItem?.title = "Add Events"
         self .createDirectory()
         let tap = UITapGestureRecognizer(target: self, action: #selector(AddEventsViewController.dismissKeyboard))

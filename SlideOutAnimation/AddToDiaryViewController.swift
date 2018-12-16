@@ -45,6 +45,7 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         let delegate = UIApplication.shared.delegate as? AppDelegate
         let selectedDate = datePicker.date
         delegate?.scheduledBirthdayEmails(at:selectedDate , subject: titleTextView.text, to:toTextView.text, body: diaryTextView.text)
+        delegate?.emailReminder = true
         self.titleTextView.text = "Title"
         self.titleTextView.textColor = UIColor.gray
         self.diaryTextView.text = "Enter Your Content"
