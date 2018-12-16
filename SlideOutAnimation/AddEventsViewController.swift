@@ -57,6 +57,11 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
             
         super.viewDidLoad()
         AddEventsViewController.schedulePressed = false
+        let calender = NSCalendar.init(calendarIdentifier: .gregorian)
+        let components = NSDateComponents()
+        let currentDate = Date.init(timeIntervalSinceNow: 0)
+        let minDate = calender?.date(byAdding: components as DateComponents, to: currentDate, options: [])
+        datePicker.minimumDate = minDate
         self.navigationController?.navigationBar.topItem?.title = "Add Events"
         self .createDirectory()
         let tap = UITapGestureRecognizer(target: self, action: #selector(AddEventsViewController.dismissKeyboard))
@@ -78,7 +83,7 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        eventImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage!
+        eventImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         let fileManager = FileManager.default
         let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("userSelectedImage.png")
         let image = eventImage.image

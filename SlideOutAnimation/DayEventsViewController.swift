@@ -13,6 +13,7 @@ import GoogleMobileAds
 class DayEventsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate, GADBannerViewDelegate {
     var listOfEvents : [NSManagedObject] = []
     static let dayEventObj = DayEventsViewController()
+    let bannerAdService = BannerAdService()
     @IBOutlet var tableView: UITableView!
     @IBAction func plusButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "Present", sender: (Any).self)
@@ -32,17 +33,13 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         case OrdinaryCell = "OrdinaryCell"
     }
     let kWidthImageFull = UIScreen.main.bounds.width
-    var bannerView : GADBannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self as UINavigationControllerDelegate
         self.updateUserSelectedImage()
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
-        bannerView.delegate = self
-        bannerView.load(GADRequest())
-        addBannerViewToView(bannerView)
+        bannerAdService.setBannerAdView(sender: self)
+        bannerAdService.addBannerViewToView(senderView: self.view, sender: self)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLeadImage), name: .updateImage, object: nil)
         //NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: .reload, object: nil)
         self.minimizedImageView.isHidden = true
@@ -248,10 +245,6 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
             print("No Image")
         }
     }
-//    func reloadTableView(_notification: Notification)
-//    {
-//        self.tableView.reloadData()
-//    }
     
     func updateLeadImage(_notification: Notification)
     {
@@ -262,29 +255,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("Ad received")
-        addBannerViewToView(bannerView)
-    }
-    
-    //Add banner ad
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
+        bannerAdService.addBannerViewToView(senderView: self.view, sender: self)
     }
     
     func getCellType(indexPath: NSIndexPath) -> cellType {

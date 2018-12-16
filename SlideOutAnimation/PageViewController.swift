@@ -28,7 +28,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         self.dataSource = self
         self.setViewControllers([getViewControllerAtIndex(index: 0)] as [UIViewController], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
         currentIndex = 0
-        self.automaticallyAdjustsScrollViewInsets = false
     self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .trash, target: self, action:(#selector(deleteButtonClicked))), animated: true)
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else
         {

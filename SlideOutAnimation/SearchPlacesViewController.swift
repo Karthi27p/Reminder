@@ -21,17 +21,13 @@ class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavig
         present(searchViewController, animated: true, completion: nil)
             }
     let locationManager = CLLocationManager()
-     var bannerView : GADBannerView!
+    let bannerAdService = BannerAdService()
     override func viewDidLoad() {
         navigationController?.delegate = self
         self.mapView.delegate = self
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
         navigationController?.delegate = self
-        bannerView.delegate = self
-        bannerView.load(GADRequest())
-        addBannerViewToView(bannerView)
+        bannerAdService.setBannerAdView(sender: self)
+        bannerAdService.addBannerViewToView(senderView: self.view, sender: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,32 +131,11 @@ class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavig
         }
     }
     
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
-    }
-    
     //Banner Ad Delegate methods
     
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        addBannerViewToView(bannerView)
+        bannerAdService.addBannerViewToView(senderView: self.view, sender: self)
         print("adViewDidReceiveAd")
     }
     

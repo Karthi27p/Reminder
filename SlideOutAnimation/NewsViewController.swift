@@ -12,8 +12,7 @@ import GoogleMobileAds
 
 class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GADBannerViewDelegate, UINavigationControllerDelegate {
     
-    var bannerView : GADBannerView!
-    enum CellType: String {
+        enum CellType: String {
         case titleCell = "Cell"
         case leadCell = "Headline Centric"
         case photoCentric = "Photo Centric"
@@ -30,19 +29,16 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return .titleCell
         }
     }
- 
+    let bannerAdService = BannerAdService()
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var homeModules : [Modules] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.rootViewController = self
+       
         navigationController?.delegate = self
-        bannerView.delegate = self
-        bannerView.load(GADRequest())
-        addBannerViewToView(bannerView)
+        bannerAdService.setBannerAdView(sender: self)
+        bannerAdService.addBannerViewToView(senderView: self.view, sender: self)
         let url = URLRequest(url: URL(string: "https://www.nbcbayarea.com/apps/news-app/home/modules/?apiVersion=14&os=ios")!)
         self.activityIndicator.startAnimating()
         self.tableView.isHidden = true
@@ -131,32 +127,11 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        view.addConstraints(
-            [NSLayoutConstraint(item: bannerView,
-                                attribute: .bottom,
-                                relatedBy: .equal,
-                                toItem: bottomLayoutGuide,
-                                attribute: .top,
-                                multiplier: 1,
-                                constant: 0),
-             NSLayoutConstraint(item: bannerView,
-                                attribute: .centerX,
-                                relatedBy: .equal,
-                                toItem: view,
-                                attribute: .centerX,
-                                multiplier: 1,
-                                constant: 0)
-            ])
-    }
-    
     //Banner Ad Delegate methods
     
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        addBannerViewToView(bannerView)
+        bannerAdService.addBannerViewToView(senderView: self.view, sender: self)
         print("adViewDidReceiveAd")
     }
     

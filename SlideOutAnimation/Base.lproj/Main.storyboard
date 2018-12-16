@@ -96,7 +96,7 @@
                         <viewLayoutGuide key="safeArea" id="Uf4-wr-dP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="FMp-rj-hPQ">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="CFV-fM-0Ac">
+                        <barButtonItem key="leftBarButtonItem" id="CFV-fM-0Ac">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pO1-Ca-wzV">
                                 <rect key="frame" x="16" y="5" width="52" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -111,7 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Kla-pp-X9e" id="ufi-HP-bur"/>
-                        <segue destination="4zS-LQ-NSg" kind="modal" identifier="OpenMenu" id="mkJ-cK-MzS"/>
+                        <segue destination="4zS-LQ-NSg" kind="presentation" identifier="OpenMenu" id="mkJ-cK-MzS"/>
                         <segue destination="2an-ub-BDu" kind="show" identifier="Day" id="Kf1-Cl-8Oa"/>
                         <segue destination="8Jn-Hl-mSc" kind="show" identifier="Diary" id="t2u-Xq-UHd"/>
                         <segue destination="Zed-mk-oza" kind="show" identifier="AddToDiary" id="Any-fa-hk7"/>
@@ -143,10 +143,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uKu-bm-DKe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Of Today's Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBR-Om-aMm">
-                                                    <rect key="frame" x="15" y="113" width="290" height="63"/>
+                                                    <rect key="frame" x="15" y="113" width="345" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="63" id="Uib-cz-TfK"/>
                                                     </constraints>
@@ -237,7 +237,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Events" id="1Xb-Gu-2LS">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="LYX-2A-WDr">
+                        <barButtonItem key="rightBarButtonItem" id="LYX-2A-WDr">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EmQ-Vn-hF2">
                                 <rect key="frame" x="329" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -599,7 +599,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DiaryImageCell" rowHeight="180" id="4ku-b7-ZYi" userLabel="Diary Image Cell" customClass="DiaryImageCellTableViewCell" customModule="SlideOutAnimation" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DiaryImageCell" rowHeight="180" id="4ku-b7-ZYi" userLabel="Diary Image Cell" customClass="DiaryImageCellTableViewCell" customModule="SlideOutAnimation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ku-b7-ZYi" id="Jko-MZ-TBi">
@@ -607,7 +607,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Scc-Wo-ny9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -618,7 +618,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="387" id="WOf-ci-p7j" userLabel="DiaryContentCell" customClass="DiaryContentCell" customModule="SlideOutAnimation" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="387" id="WOf-ci-p7j" userLabel="DiaryContentCell" customClass="DiaryContentCell" customModule="SlideOutAnimation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="208" width="375" height="387"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOf-ci-p7j" id="ETJ-lV-znr">
@@ -626,7 +626,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="el2-2u-ssk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="mze-qN-XBS"/>
                                                     </constraints>
@@ -635,7 +635,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-7a-R3f">
-                                                    <rect key="frame" x="10" y="40" width="310" height="20.5"/>
+                                                    <rect key="frame" x="10" y="40" width="365" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -897,7 +897,7 @@
                         <viewLayoutGuide key="safeArea" id="8hv-BJ-8fD"/>
                     </view>
                     <navigationItem key="navigationItem" id="4CI-rW-FFB">
-                        <barButtonItem key="rightBarButtonItem" title="MENU" style="plain" id="5MN-yP-DbN">
+                        <barButtonItem key="rightBarButtonItem" title="MENU" id="5MN-yP-DbN">
                             <inset key="imageInsets" minX="306" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -907,7 +907,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="27Q-e7-kho" id="BWx-wn-QQL"/>
-                        <segue destination="yd5-OC-suj" kind="show" id="Ct6-oV-7Jg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AFy-gY-nO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -946,6 +945,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4zS-LQ-NSg" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="A8c-9k-HoZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bsg-74-MJa">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1024,10 +1024,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EKX-Hn-v9I" userLabel="Lead Image">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3I-6q-yup" userLabel="Lead Title" customClass="PaddingLabel" customModule="SlideOutAnimation" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="159.5" width="320" height="40"/>
+                                                    <rect key="frame" x="0.0" y="159.5" width="375" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="n93-sY-GXR"/>
@@ -1051,7 +1051,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c8-ND-HFZ" userLabel="Lead Heading" customClass="PaddingLabel" customModule="SlideOutAnimation" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                     <color key="backgroundColor" red="0.10751407593488693" green="0.54937773942947388" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="lTS-dv-yvl"/>
@@ -1093,7 +1093,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lym-8C-erS" userLabel="Section Title" customClass="PaddingLabel" customModule="SlideOutAnimation" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                     <color key="backgroundColor" red="0.10751407593488693" green="0.54937773942947388" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="KOJ-bm-scA"/>
@@ -1108,7 +1108,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j82-g1-kPI">
-                                                    <rect key="frame" x="0.0" y="40" width="320" height="340"/>
+                                                    <rect key="frame" x="0.0" y="40" width="375" height="340"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="340" id="iqp-3h-XUF"/>
@@ -1121,7 +1121,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCentricCollectionViewCell" id="YOO-Dw-nHO" customClass="PhotoCentricCollectionViewCell" customModule="SlideOutAnimation" customModuleProvider="target">
-                                                            <rect key="frame" x="60" y="0.0" width="200" height="150"/>
+                                                            <rect key="frame" x="87.5" y="0.0" width="200" height="150"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
@@ -1207,31 +1207,10 @@
             </objects>
             <point key="canvasLocation" x="2392.753623188406" y="-46.467391304347828"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yFM-Jp-BjK">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tnh-6g-LrG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hh0-0S-bP2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="S5U-7T-QXc" kind="relationship" relationship="rootViewController" id="dIl-jB-cY4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0w4-QT-6P7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="511" y="-201"/>
-        </scene>
     </scenes>
     <resources>
         <image name="camera" width="327" height="154"/>
         <image name="page1" width="179" height="119"/>
         <image name="swiperight" width="125" height="125"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="xao-z2-KMI"/>
-    </inferredMetricsTieBreakers>
 </document>

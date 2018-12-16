@@ -22,6 +22,7 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         view.addGestureRecognizer(tap)
         NotificationCenter.default.addObserver(self, selector: #selector(AddToDiaryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(AddToDiaryViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        navigationController?.delegate = self
         diaryTextView.delegate = self
         titleTextView.delegate = self
     }
@@ -31,6 +32,22 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    let customNavigationViewController = CustomNavigationController()
+    let customInteractionViewController = CustomInteractionController()
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        if operation == .push
+        {
+            customInteractionViewController.attachToViewController(viewController: toVC)
+        }
+        if operation == .pop
+        {
+            self.navigationController?.delegate = nil;
+        }
+        customNavigationViewController.reverse = (operation == .pop)
+        return customNavigationViewController as UIViewControllerAnimatedTransitioning
     }
     
     @IBAction func addToDiaryButtonPressed(_ sender: Any) {

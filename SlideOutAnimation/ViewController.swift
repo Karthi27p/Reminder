@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import CoreData
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate{
 
     var photos : [UIImage] = [#imageLiteral(resourceName: "events"),#imageLiteral(resourceName: "news"),#imageLiteral(resourceName: "map"),#imageLiteral(resourceName: "diary")]
     var diaryItems : [NSManagedObject] = []
@@ -31,7 +31,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             layout.delegate = self as customLayoutDelegate
         }
          tagValue = 5
-         self.automaticallyAdjustsScrollViewInsets = false
+        self.transitioningDelegate = self
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +50,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         catch let error as NSError{
             print("\(error)")
         }
-
+        navigationController?.delegate = self
     }
     
     //Collection View Implementation
@@ -89,6 +90,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return 1
     }
 
+    let customNavigationViewController = CustomNavigationController()
+
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    
+        customNavigationViewController.reverse = false
+        return customNavigationViewController as UIViewControllerAnimatedTransitioning
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
