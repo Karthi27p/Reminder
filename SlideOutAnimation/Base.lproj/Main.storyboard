@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -429,7 +429,7 @@
         <!--AppIconsViewController-->
         <scene sceneID="wuj-Mn-KZZ">
             <objects>
-                <viewController storyboardIdentifier="EditEvents" id="b8i-qW-GT6" userLabel="AppIconsViewController" customClass="AppIconsViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppIcons" id="b8i-qW-GT6" userLabel="AppIconsViewController" customClass="AppIconsViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oOd-z1-fqD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1101,7 +1101,7 @@
         <!--Search Places View Controller-->
         <scene sceneID="2Tc-dH-Q5m">
             <objects>
-                <viewController id="S5U-7T-QXc" customClass="SearchPlacesViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="S5U-7T-QXc" customClass="SearchPlacesViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YvX-nN-ZsW" userLabel="SearchPlacesViewController">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1137,7 +1137,7 @@
         <!--News View Controller-->
         <scene sceneID="w6N-vA-9L0">
             <objects>
-                <viewController id="KA2-9J-OTO" customClass="NewsViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="News" id="KA2-9J-OTO" customClass="NewsViewController" customModule="SlideOutAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0o-Bk-c60">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

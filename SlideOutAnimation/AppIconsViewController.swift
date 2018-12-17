@@ -1,5 +1,4 @@
 //
-//  EditEventsViewController.swift
 //  SlideOutAnimation
 //
 //  Created by Karthi on 28/08/17.

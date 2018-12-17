@@ -70,7 +70,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         if(indexPath.row == 2)
         {
-            let editEventVC = storyBoard.instantiateViewController(withIdentifier: "EditEvents")
+            let editEventVC = storyBoard.instantiateViewController(withIdentifier: "AppIcons")
             self.navigationController?.present(editEventVC, animated: true)
         }
         if(indexPath.row == 3)

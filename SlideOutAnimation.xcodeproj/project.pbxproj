@@ -22,6 +22,9 @@
 		5E6AA27A21BC2C39007C9A58 /* AppIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */; };
 		5E6AA27C21BC3C58007C9A58 /* DontForget.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E6AA27B21BC3C58007C9A58 /* DontForget.png */; };
 		5E6BF88221BD2318007583DD /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BF88121BD2318007583DD /* PaddingLabel.swift */; };
+		5E7D87E621C7EE2000789FB0 /* News_Sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E7D87E521C7EE2000789FB0 /* News_Sample.json */; };
+		5E7D87E921C7F49700789FB0 /* UnitTestControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D87E721C7F49700789FB0 /* UnitTestControllers.swift */; };
+		5E7D87EA21C7F49700789FB0 /* UnitTestNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D87E821C7F49700789FB0 /* UnitTestNewsViewController.swift */; };
 		5EA61F4921C64792009F609E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4821C64792009F609E /* Utility.swift */; };
 		5EA61F4B21C65103009F609E /* BannerAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4A21C65103009F609E /* BannerAdService.swift */; };
 		5EA61F4D21C6971D009F609E /* EmailReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4C21C6971D009F609E /* EmailReminderViewController.swift */; };
@@ -63,6 +66,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5E7D87DB21C7E04000789FB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A75E02371F34953400FB1872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A75E023E1F34953400FB1872;
+			remoteInfo = SlideOutAnimation;
+		};
 		A7657C1A1F3F245B00A6EF96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A75E02371F34953400FB1872 /* Project object */;
@@ -104,6 +114,11 @@
 		5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E6AA27B21BC3C58007C9A58 /* DontForget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DontForget.png; sourceTree = "<group>"; };
 		5E6BF88121BD2318007583DD /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		5E7D87D621C7E03F00789FB0 /* SlideOutAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideOutAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E7D87DA21C7E04000789FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E7D87E521C7EE2000789FB0 /* News_Sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = News_Sample.json; sourceTree = "<group>"; };
+		5E7D87E721C7F49700789FB0 /* UnitTestControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestControllers.swift; sourceTree = "<group>"; };
+		5E7D87E821C7F49700789FB0 /* UnitTestNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestNewsViewController.swift; sourceTree = "<group>"; };
 		5EA61F4821C64792009F609E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		5EA61F4A21C65103009F609E /* BannerAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdService.swift; sourceTree = "<group>"; };
 		5EA61F4C21C6971D009F609E /* EmailReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReminderViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +165,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E7D87D321C7E03F00789FB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75E023C1F34953400FB1872 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,11 +192,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E7D87D721C7E04000789FB0 /* SlideOutAnimationTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E7D87E721C7F49700789FB0 /* UnitTestControllers.swift */,
+				5E7D87E821C7F49700789FB0 /* UnitTestNewsViewController.swift */,
+				5E7D87DA21C7E04000789FB0 /* Info.plist */,
+			);
+			path = SlideOutAnimationTests;
+			sourceTree = "<group>";
+		};
 		A75E02361F34953400FB1872 = {
 			isa = PBXGroup;
 			children = (
 				A75E02411F34953400FB1872 /* SlideOutAnimation */,
 				A7657C131F3F245B00A6EF96 /* StickyNotes */,
+				5E7D87D721C7E04000789FB0 /* SlideOutAnimationTests */,
 				A7657C101F3F245B00A6EF96 /* Frameworks */,
 				A75E02401F34953400FB1872 /* Products */,
 				F93E780945212556C01A2265 /* Pods */,
@@ -186,6 +219,7 @@
 			children = (
 				A75E023F1F34953400FB1872 /* SlideOutAnimation.app */,
 				A7657C0F1F3F245B00A6EF96 /* StickyNotes.appex */,
+				5E7D87D621C7E03F00789FB0 /* SlideOutAnimationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +244,7 @@
 				A770C8ED1F3C1DFD00C2BE84 /* CustomInteractionController.swift */,
 				A75E02591F349CC400FB1872 /* PresentViewController.swift */,
 				A75E02461F34953500FB1872 /* Main.storyboard */,
+				5E7D87E521C7EE2000789FB0 /* News_Sample.json */,
 				5E6BF88121BD2318007583DD /* PaddingLabel.swift */,
 				5E6AA27921BC2C39007C9A58 /* AppIconCollectionViewCell.swift */,
 				5E480F4F21B273280016DEF6 /* PhotoCentricCollectionViewCell.swift */,
@@ -279,6 +314,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E7D87D521C7E03F00789FB0 /* SlideOutAnimationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E7D87DD21C7E04000789FB0 /* Build configuration list for PBXNativeTarget "SlideOutAnimationTests" */;
+			buildPhases = (
+				5E7D87D221C7E03F00789FB0 /* Sources */,
+				5E7D87D321C7E03F00789FB0 /* Frameworks */,
+				5E7D87D421C7E03F00789FB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E7D87DC21C7E04000789FB0 /* PBXTargetDependency */,
+			);
+			name = SlideOutAnimationTests;
+			productName = SlideOutAnimationTests;
+			productReference = 5E7D87D621C7E03F00789FB0 /* SlideOutAnimationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A75E023E1F34953400FB1872 /* SlideOutAnimation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A75E02541F34953500FB1872 /* Build configuration list for PBXNativeTarget "SlideOutAnimation" */;
@@ -324,10 +377,15 @@
 		A75E02371F34953400FB1872 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Tringapps;
 				TargetAttributes = {
+					5E7D87D521C7E03F00789FB0 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A75E023E1F34953400FB1872;
+					};
 					A75E023E1F34953400FB1872 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 6VEK7EP32G;
@@ -367,17 +425,26 @@
 			targets = (
 				A75E023E1F34953400FB1872 /* SlideOutAnimation */,
 				A7657C0E1F3F245B00A6EF96 /* StickyNotes */,
+				5E7D87D521C7E03F00789FB0 /* SlideOutAnimationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E7D87D421C7E03F00789FB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75E023D1F34953400FB1872 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5E6AA27821BC2520007C9A58 /* map.png in Resources */,
 				A75E02501F34953500FB1872 /* LaunchScreen.storyboard in Resources */,
+				5E7D87E621C7EE2000789FB0 /* News_Sample.json in Resources */,
 				5E6AA27421BC2510007C9A58 /* events.png in Resources */,
 				A75E024D1F34953500FB1872 /* Assets.xcassets in Resources */,
 				5E6AA27221BC2508007C9A58 /* news.png in Resources */,
@@ -464,6 +531,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E7D87D221C7E03F00789FB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E7D87EA21C7F49700789FB0 /* UnitTestNewsViewController.swift in Sources */,
+				5E7D87E921C7F49700789FB0 /* UnitTestControllers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75E023B1F34953400FB1872 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,6 +595,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5E7D87DC21C7E04000789FB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A75E023E1F34953400FB1872 /* SlideOutAnimation */;
+			targetProxy = 5E7D87DB21C7E04000789FB0 /* PBXContainerItemProxy */;
+		};
 		A7657C1B1F3F245B00A6EF96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A7657C0E1F3F245B00A6EF96 /* StickyNotes */;
@@ -554,6 +635,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5E7D87DE21C7E04000789FB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SlideOutAnimationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideOutAnimation.app/SlideOutAnimation";
+			};
+			name = Debug;
+		};
+		5E7D87DF21C7E04000789FB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SlideOutAnimationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideOutAnimation.app/SlideOutAnimation";
+			};
+			name = Release;
+		};
 		A75E02521F34953500FB1872 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -745,6 +871,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E7D87DD21C7E04000789FB0 /* Build configuration list for PBXNativeTarget "SlideOutAnimationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E7D87DE21C7E04000789FB0 /* Debug */,
+				5E7D87DF21C7E04000789FB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A75E023A1F34953400FB1872 /* Build configuration list for PBXProject "SlideOutAnimation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
