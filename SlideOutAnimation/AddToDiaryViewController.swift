@@ -151,10 +151,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         catch let error as NSError {
             print("\(error)")
         }
-        
-        
-        
-        
+ 
     }
     
     @IBAction func galleryButtonPressed(_ sender: Any) {
