@@ -25,6 +25,7 @@
 		5E7D87E621C7EE2000789FB0 /* News_Sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E7D87E521C7EE2000789FB0 /* News_Sample.json */; };
 		5E7D87E921C7F49700789FB0 /* UnitTestControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D87E721C7F49700789FB0 /* UnitTestControllers.swift */; };
 		5E7D87EA21C7F49700789FB0 /* UnitTestNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D87E821C7F49700789FB0 /* UnitTestNewsViewController.swift */; };
+		5E7D87F221C805AF00789FB0 /* SlideOutAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D87F121C805AF00789FB0 /* SlideOutAnimationUITests.swift */; };
 		5EA61F4921C64792009F609E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4821C64792009F609E /* Utility.swift */; };
 		5EA61F4B21C65103009F609E /* BannerAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4A21C65103009F609E /* BannerAdService.swift */; };
 		5EA61F4D21C6971D009F609E /* EmailReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4C21C6971D009F609E /* EmailReminderViewController.swift */; };
@@ -67,6 +68,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		5E7D87DB21C7E04000789FB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A75E02371F34953400FB1872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A75E023E1F34953400FB1872;
+			remoteInfo = SlideOutAnimation;
+		};
+		5E7D87F421C805AF00789FB0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A75E02371F34953400FB1872 /* Project object */;
 			proxyType = 1;
@@ -119,6 +127,9 @@
 		5E7D87E521C7EE2000789FB0 /* News_Sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = News_Sample.json; sourceTree = "<group>"; };
 		5E7D87E721C7F49700789FB0 /* UnitTestControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestControllers.swift; sourceTree = "<group>"; };
 		5E7D87E821C7F49700789FB0 /* UnitTestNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestNewsViewController.swift; sourceTree = "<group>"; };
+		5E7D87EF21C805AF00789FB0 /* SlideOutAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideOutAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E7D87F121C805AF00789FB0 /* SlideOutAnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationUITests.swift; sourceTree = "<group>"; };
+		5E7D87F321C805AF00789FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EA61F4821C64792009F609E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		5EA61F4A21C65103009F609E /* BannerAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdService.swift; sourceTree = "<group>"; };
 		5EA61F4C21C6971D009F609E /* EmailReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReminderViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +183,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5E7D87EC21C805AF00789FB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75E023C1F34953400FB1872 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,12 +220,22 @@
 			path = SlideOutAnimationTests;
 			sourceTree = "<group>";
 		};
+		5E7D87F021C805AF00789FB0 /* SlideOutAnimationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5E7D87F121C805AF00789FB0 /* SlideOutAnimationUITests.swift */,
+				5E7D87F321C805AF00789FB0 /* Info.plist */,
+			);
+			path = SlideOutAnimationUITests;
+			sourceTree = "<group>";
+		};
 		A75E02361F34953400FB1872 = {
 			isa = PBXGroup;
 			children = (
 				A75E02411F34953400FB1872 /* SlideOutAnimation */,
 				A7657C131F3F245B00A6EF96 /* StickyNotes */,
 				5E7D87D721C7E04000789FB0 /* SlideOutAnimationTests */,
+				5E7D87F021C805AF00789FB0 /* SlideOutAnimationUITests */,
 				A7657C101F3F245B00A6EF96 /* Frameworks */,
 				A75E02401F34953400FB1872 /* Products */,
 				F93E780945212556C01A2265 /* Pods */,
@@ -220,6 +248,7 @@
 				A75E023F1F34953400FB1872 /* SlideOutAnimation.app */,
 				A7657C0F1F3F245B00A6EF96 /* StickyNotes.appex */,
 				5E7D87D621C7E03F00789FB0 /* SlideOutAnimationTests.xctest */,
+				5E7D87EF21C805AF00789FB0 /* SlideOutAnimationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,6 +361,24 @@
 			productReference = 5E7D87D621C7E03F00789FB0 /* SlideOutAnimationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5E7D87EE21C805AF00789FB0 /* SlideOutAnimationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E7D87F821C805AF00789FB0 /* Build configuration list for PBXNativeTarget "SlideOutAnimationUITests" */;
+			buildPhases = (
+				5E7D87EB21C805AF00789FB0 /* Sources */,
+				5E7D87EC21C805AF00789FB0 /* Frameworks */,
+				5E7D87ED21C805AF00789FB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E7D87F521C805AF00789FB0 /* PBXTargetDependency */,
+			);
+			name = SlideOutAnimationUITests;
+			productName = SlideOutAnimationUITests;
+			productReference = 5E7D87EF21C805AF00789FB0 /* SlideOutAnimationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		A75E023E1F34953400FB1872 /* SlideOutAnimation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A75E02541F34953500FB1872 /* Build configuration list for PBXNativeTarget "SlideOutAnimation" */;
@@ -386,6 +433,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = A75E023E1F34953400FB1872;
 					};
+					5E7D87EE21C805AF00789FB0 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A75E023E1F34953400FB1872;
+					};
 					A75E023E1F34953400FB1872 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 6VEK7EP32G;
@@ -426,12 +478,20 @@
 				A75E023E1F34953400FB1872 /* SlideOutAnimation */,
 				A7657C0E1F3F245B00A6EF96 /* StickyNotes */,
 				5E7D87D521C7E03F00789FB0 /* SlideOutAnimationTests */,
+				5E7D87EE21C805AF00789FB0 /* SlideOutAnimationUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5E7D87D421C7E03F00789FB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E7D87ED21C805AF00789FB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -540,6 +600,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5E7D87EB21C805AF00789FB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E7D87F221C805AF00789FB0 /* SlideOutAnimationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A75E023B1F34953400FB1872 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,6 +667,11 @@
 			isa = PBXTargetDependency;
 			target = A75E023E1F34953400FB1872 /* SlideOutAnimation */;
 			targetProxy = 5E7D87DB21C7E04000789FB0 /* PBXContainerItemProxy */;
+		};
+		5E7D87F521C805AF00789FB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A75E023E1F34953400FB1872 /* SlideOutAnimation */;
+			targetProxy = 5E7D87F421C805AF00789FB0 /* PBXContainerItemProxy */;
 		};
 		A7657C1B1F3F245B00A6EF96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -677,6 +750,51 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideOutAnimation.app/SlideOutAnimation";
+			};
+			name = Release;
+		};
+		5E7D87F621C805AF00789FB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SlideOutAnimationUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6bfeaa72-52a8-49f2-9055-b6af03cf7122";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlideOutAnimation;
+			};
+			name = Debug;
+		};
+		5E7D87F721C805AF00789FB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SlideOutAnimationUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6bfeaa72-52a8-49f2-9055-b6af03cf7122";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlideOutAnimation;
 			};
 			name = Release;
 		};
@@ -876,6 +994,15 @@
 			buildConfigurations = (
 				5E7D87DE21C7E04000789FB0 /* Debug */,
 				5E7D87DF21C7E04000789FB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E7D87F821C805AF00789FB0 /* Build configuration list for PBXNativeTarget "SlideOutAnimationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E7D87F621C805AF00789FB0 /* Debug */,
+				5E7D87F721C805AF00789FB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
