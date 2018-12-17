@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MessageUI
 
-class EmailReminderViewController: UIViewController, UIImagePickerControllerDelegate, UITextViewDelegate, MFMailComposeViewControllerDelegate {
+class EmailReminderViewController: UIViewController, UIImagePickerControllerDelegate, UITextViewDelegate, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
     var userSelectedImage : UIImage = #imageLiteral(resourceName: "camera")
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var subjectTextView: UITextView!
@@ -32,6 +32,7 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         toTextView.delegate = self
         subjectTextView.delegate = self
         bodyTextView.delegate = self
+        navigationController?.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -89,7 +90,7 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
     }
     
     // Image Picker
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+   public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         // Local variable inserted by Swift 4.2 migrator.
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
@@ -114,13 +115,13 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func captureButtonPresed(_ sender: Any) {
         let picker = UIImagePickerController()
-        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.delegate = self
         picker.sourceType = .camera
         present(picker, animated: true, completion: nil)
     }
     @IBAction func galleryButtonPressed(_ sender: Any) {
         let picker = UIImagePickerController()
-        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.delegate = self 
         picker.sourceType = .photoLibrary
         present(picker, animated: true, completion: nil)
     }
