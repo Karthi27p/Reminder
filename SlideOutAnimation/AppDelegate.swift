@@ -274,11 +274,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             rootViewController.pushViewController(eventsVC, animated: true)
         }
         
-        if(shortcutItem.type == "com.tringapps.slideoutanimation.sticky")
+        if(shortcutItem.type == "com.tringapps.slideoutanimation.emaiReminders")
         {
-            let stickyVC : StickyNotesViewController = storyboard.instantiateViewController(withIdentifier: "StickyNotes") as! StickyNotesViewController
+            let emailReminderVC : EmailReminderViewController = storyboard.instantiateViewController(withIdentifier: "Email") as! EmailReminderViewController
             let rootViewController = self.window!.rootViewController as! UINavigationController;
-            rootViewController.pushViewController(stickyVC, animated: true);
+            rootViewController.pushViewController(emailReminderVC, animated: true);
         }
         
     }

@@ -17,6 +17,7 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var toTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var imageView: UIImageView!
+    var emailItems : [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,14 +96,21 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         self.userSelectedImage = (info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage)!
+        imageView.image = userSelectedImage
         dismiss(animated: true, completion: nil)
     }
     
     func configureMailComposer(mailId: [String], subject: String, body: String) -> MFMailComposeViewController{
+        fetchDataFromSQLite()
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.setToRecipients(mailId)
         mailComposerVC.setSubject(subject)
-        mailComposerVC.addAttachmentData(UIImage(named: "events")!.pngData()!, mimeType: "image/png", fileName: "events.png")
+        let emailItem = emailItems.last
+        guard let imageData = emailItem?.value(forKey: "image") as? Data else {
+            mailComposerVC.setMessageBody(body, isHTML: false)
+            return mailComposerVC
+        }
+        mailComposerVC.addAttachmentData(imageData, mimeType: "image/png", fileName: "image")
         mailComposerVC.setMessageBody(body, isHTML: false)
         return mailComposerVC
         
@@ -160,6 +168,24 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
             print("\(error)")
         }
         
+    }
+    
+    func fetchDataFromSQLite()
+    {
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else
+        {
+            return
+        }
+        let managedContext = appdelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Email")
+        
+        do{
+            try
+                emailItems = managedContext.fetch(fetchRequest)
+        }
+        catch let error as NSError{
+            print("\(error)")
+        }
     }
 }
 

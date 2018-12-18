@@ -39,7 +39,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationController?.delegate = self
         bannerAdService.setBannerAdView(sender: self)
         bannerAdService.addBannerViewToView(senderView: self.view, sender: self)
-        let url = URLRequest(url: URL(string: "https://www.nbcbayarea.com/apps/news-app/home/modules/?apiVersion=14&os=ios")!)
+        let url = URLRequest(url: URL(string: "https://www.nbcnewyork.com/apps/news-app/home/modules/?apiVersion=14&os=ios")!)
         self.activityIndicator.startAnimating()
         self.tableView.isHidden = true
         ApiService.apiServiceRequest(requestUrl: url, resultStruct: HomeBase.self) { (data, Error) in

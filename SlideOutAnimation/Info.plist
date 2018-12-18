@@ -130,9 +130,9 @@
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeCompose</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Sticky Notes</string>
+			<string>Email Reminders</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>com.tringapps.slideoutanimation.sticky</string>
+			<string>com.tringapps.slideoutanimation.emaiReminders</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
