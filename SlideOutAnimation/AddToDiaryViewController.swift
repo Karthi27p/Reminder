@@ -15,6 +15,9 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet var diaryTextView: UITextView!
     let diaryViewController = DiaryViewController()
+    
+    //MARK: App life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -49,20 +52,8 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         customNavigationViewController.reverse = (operation == .pop)
         return customNavigationViewController as UIViewControllerAnimatedTransitioning
     }
-    
-    @IBAction func addToDiaryButtonPressed(_ sender: Any) {
-    //PageViewController.pageViewControllerSharedInstance.contentArray.append(diaryTextView.text)
-        //PageViewController.pageViewControllerSharedInstance.titleArray.append(titleTextView.text)
-        //PageViewController.pageViewControllerSharedInstance.imageArray.append(imageView.image!)
-        let imageData = userSelectedImage.pngData()
-        self.save(title: titleTextView.text, content: diaryTextView.text, image: imageData!)
-        self.titleTextView.text = "Title"
-        self.titleTextView.textColor = UIColor.gray
-        self.diaryTextView.text = "Enter Your Content"
-        self.diaryTextView.textColor = UIColor.gray
         
-    }
-
+    //MARK: Text view methods
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
@@ -87,8 +78,8 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         {
             if(textView.tag == 101)
             {
-            textView.text = "Enter Your Content"
-            textView.textColor = UIColor.gray
+                textView.text = "Enter Your Content"
+                textView.textColor = UIColor.gray
             }
             else
             {
@@ -100,6 +91,8 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         
         textView.resignFirstResponder()
     }
+    
+    //MARK: Keyboard methods
     
     @objc func dismissKeyBoard()
     {
@@ -117,22 +110,13 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     }
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
         self.userSelectedImage = (info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage)!
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
     func save(title: String, content: String, image: Data)
     {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -151,8 +135,10 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         catch let error as NSError {
             print("\(error)")
         }
- 
+        
     }
+    
+    //MARK: Button Actions
     
     @IBAction func galleryButtonPressed(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -170,14 +156,23 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     @IBAction func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func addToDiaryButtonPressed(_ sender: Any) {
+        let imageData = userSelectedImage.pngData()
+        self.save(title: titleTextView.text, content: diaryTextView.text, image: imageData!)
+        self.titleTextView.text = "Title"
+        self.titleTextView.textColor = UIColor.gray
+        self.diaryTextView.text = "Enter Your Content"
+        self.diaryTextView.textColor = UIColor.gray
+    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
+    return input.rawValue
 }

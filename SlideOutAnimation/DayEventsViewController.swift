@@ -34,6 +34,8 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     let kWidthImageFull = UIScreen.main.bounds.width
     
+    //MARK: App life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self as UINavigationControllerDelegate
@@ -41,7 +43,6 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         bannerAdService.setBannerAdView(sender: self)
         bannerAdService.addBannerViewToView(senderView: self.view, sender: self)
         NotificationCenter.default.addObserver(self, selector: #selector(updateLeadImage), name: .updateImage, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: .reload, object: nil)
         self.minimizedImageView.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
         self.animatedImageViewWidthConstraint.constant = kWidthImageFull
@@ -57,7 +58,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         do{
             try
-            listOfEvents = managedContext.fetch(fetchRequest)
+                listOfEvents = managedContext.fetch(fetchRequest)
         }
         catch let error as NSError{
             print("\(error)")
@@ -70,9 +71,11 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: Table view delegate
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        //return AddEventsViewController.addEventsObj.eventNamesArray.count
         return listOfEvents.count+1
     }
     
@@ -82,7 +85,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeadCell") as! LeadCellTableViewCell
             cell.firstEventLabel.text = AddEventsViewController.addEventsObj.eventNamesArray[indexPath.row]
-
+            
             return cell
         }
             
@@ -93,8 +96,6 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
             {
                 let event = listOfEvents[indexPath.row-1]
                 cell?.textLabel?.text = event.value(forKey: "eventName") as? String
-
-            //cell?.textLabel?.text = AddEventsViewController.addEventsObj.eventNamesArray[indexPath.row]
             }
             return cell!
         }
@@ -111,7 +112,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
             let managedContext = appdelegate?.persistentContainer.viewContext
             if(listOfEvents.count > 0)
             {
-            managedContext?.delete(listOfEvents[indexPath.row-1])
+                managedContext?.delete(listOfEvents[indexPath.row-1])
                 if (managedContext?.hasChanges)! {
                     do {
                         try managedContext?.save()
@@ -136,7 +137,6 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
     }
-    
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
@@ -178,7 +178,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
                 self.minimizedImageView.isHidden = false
             }
         }
-                else
+        else
         {
             self.animatedImageViewTopConstraint.constant = 0
             self.animatedImageViewLeadingConstraint.constant = 0
@@ -188,8 +188,8 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
             self.animatedImageView.isHidden = false
             self.minimizedImageView.isHidden = true
         }
-}
-
+    }
+    
     //View Controller Based Animation
     
     let customAnimationViewController = CustomPresentAnimationController()

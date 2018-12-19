@@ -15,13 +15,10 @@ import GoogleMobileAds
 class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavigationControllerDelegate, MKMapViewDelegate, GADBannerViewDelegate{
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBAction func searchButtonPressed(_ sender: Any) {
-        let searchViewController = UISearchController(searchResultsController: nil)
-        searchViewController.searchBar.delegate = self;
-        present(searchViewController, animated: true, completion: nil)
-            }
     let locationManager = CLLocationManager()
     let bannerAdService = BannerAdService()
+    
+    //MARK: App life cycle methods
     override func viewDidLoad() {
         navigationController?.delegate = self
         self.mapView.delegate = self
@@ -94,6 +91,8 @@ class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavig
         }
     }
     
+    //MARK: Map Delegate methods
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? MKPointAnnotation else {
             return nil
@@ -131,7 +130,13 @@ class SearchPlacesViewController: UIViewController, UISearchBarDelegate, UINavig
         }
     }
     
-    //Banner Ad Delegate methods
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        let searchViewController = UISearchController(searchResultsController: nil)
+        searchViewController.searchBar.delegate = self;
+        present(searchViewController, animated: true, completion: nil)
+    }
+    
+    //MARK: Banner Ad Delegate methods
     
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {

@@ -27,21 +27,6 @@ extension DismissViewController : UIViewControllerAnimatedTransitioning{
         let containerView = transitionContext.containerView
         let snapshot = containerView.viewWithTag(123)
         
-        /*UIView.animate(
-            withDuration: transitionDuration(using: transitionContext),
-            animations: {
-                snapshot?.frame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
-                
-        },
-            completion: { _ in
-                let didTransitionComplete = !transitionContext.transitionWasCancelled
-                if didTransitionComplete {
-                    containerView.insertSubview(toVC.view, aboveSubview: fromVC.view)
-                    snapshot?.removeFromSuperview()
-                }
-                transitionContext.completeTransition(didTransitionComplete)
-        }
-        )*/
         UIView.animate(
             withDuration: transitionDuration(using: transitionContext),
             animations: {

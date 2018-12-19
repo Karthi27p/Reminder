@@ -14,11 +14,14 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    //MARK: App life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,11 +30,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillDisappear(_ animated: Bool) {
         
     }
+    //MARK: Table view delegate methods
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return menuItems.count
     }
-
+    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -43,11 +47,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if(indexPath.row == 0)
         {
-            var kNavigationBarY = 0.0;
-            if #available(iOS 11.0 , *)
-            {
-                kNavigationBarY = 20.0;
-            }
+            let kNavigationBarY = 20.0;
             let dayEventVC = storyBoard.instantiateViewController(withIdentifier: "ScheduledEvents") as! DayEventsViewController
             self.navigationController?.present(dayEventVC, animated: true)
             let navBar : UINavigationBar = UINavigationBar.init(frame: CGRect(x: 0.0, y:kNavigationBarY , width: (Double(UIScreen.main.bounds.size.width)), height: 64.0))
@@ -60,13 +60,11 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             dayEventVC.watchAndReadTopConstraint.constant = navBar.frame.height-CGFloat(kNavigationBarY)
             dayEventVC.tableViewTopConstraint.constant = dayEventVC.watchAndReadTopConstraint.constant
             
-            
-
         }
         if(indexPath.row == 1)
         {
-         let addEventVC = storyBoard.instantiateViewController(withIdentifier: "AddEvents")
-         self.navigationController?.present(addEventVC, animated: true)
+            let addEventVC = storyBoard.instantiateViewController(withIdentifier: "AddEvents")
+            self.navigationController?.present(addEventVC, animated: true)
         }
         if(indexPath.row == 2)
         {
@@ -89,12 +87,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
+    //MARK: Close button action
     @objc func closeButtonPresed()
     {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
 }
 
 

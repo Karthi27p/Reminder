@@ -33,6 +33,9 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var homeModules : [Modules] = []
+    
+    //MARK: App life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -73,6 +76,7 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return customNavigationViewController as UIViewControllerAnimatedTransitioning
     }
     
+    //MARK: Table view delegate methods
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.homeModules.count

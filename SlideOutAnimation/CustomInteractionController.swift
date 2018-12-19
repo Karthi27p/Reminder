@@ -44,6 +44,4 @@ class CustomInteractionController: UIPercentDrivenInteractiveTransition {
             print("Swift switch must be exhaustive, thus the default")
         }
     }
-
-    
 }

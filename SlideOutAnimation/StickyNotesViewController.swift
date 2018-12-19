@@ -12,6 +12,9 @@ class StickyNotesViewController: UIViewController {
     static let stickeyNotesObj = StickyNotesViewController()
     @IBOutlet var textArea: UITextView!
     var stickyNotesContent = ["Test"]
+    
+    //MARK: App life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
@@ -19,17 +22,6 @@ class StickyNotesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
- 
-    @IBAction func pasteButtonPressed(_ sender: Any) {
-        //StickyNotesViewController.stickeyNotesObj.stickyNotesContent.append(self.textArea.text)
-        self.stickyNotesContent.append(self.textArea.text)
-        let defaults = UserDefaults()
-        defaults.addSuite(named: "group.com.tringapps.slideAnimation")
-        defaults.set(stickyNotesContent, forKey: "StickyNotes")
-        defaults.synchronize()
-       
-        
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,18 +38,19 @@ class StickyNotesViewController: UIViewController {
         return StickyNotesViewController.stickeyNotesObj.stickyNotesContent
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    //MARK: Button Actions
+    
     @IBAction func closeButtonAction(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func pasteButtonPressed(_ sender: Any) {
+        //StickyNotesViewController.stickeyNotesObj.stickyNotesContent.append(self.textArea.text)
+        self.stickyNotesContent.append(self.textArea.text)
+        let defaults = UserDefaults()
+        defaults.addSuite(named: "group.com.tringapps.slideAnimation")
+        defaults.set(stickyNotesContent, forKey: "StickyNotes")
+        defaults.synchronize()
     }
 }

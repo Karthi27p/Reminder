@@ -58,5 +58,5 @@ class CustomNavigationController: NSObject, UIViewControllerAnimatedTransitionin
         })
         
     }
-
+    
 }

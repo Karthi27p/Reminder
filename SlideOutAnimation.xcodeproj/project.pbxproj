@@ -26,7 +26,6 @@
 		5E7D87E921C7F49700789FB0 /* UnitTestControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D87E721C7F49700789FB0 /* UnitTestControllers.swift */; };
 		5E7D87EA21C7F49700789FB0 /* UnitTestNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D87E821C7F49700789FB0 /* UnitTestNewsViewController.swift */; };
 		5E7D87F221C805AF00789FB0 /* SlideOutAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D87F121C805AF00789FB0 /* SlideOutAnimationUITests.swift */; };
-		5EA61F4921C64792009F609E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4821C64792009F609E /* Utility.swift */; };
 		5EA61F4B21C65103009F609E /* BannerAdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4A21C65103009F609E /* BannerAdService.swift */; };
 		5EA61F4D21C6971D009F609E /* EmailReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA61F4C21C6971D009F609E /* EmailReminderViewController.swift */; };
 		5EE2D96C21AA75BA0012EFC4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */; };
@@ -130,7 +129,6 @@
 		5E7D87EF21C805AF00789FB0 /* SlideOutAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideOutAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E7D87F121C805AF00789FB0 /* SlideOutAnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutAnimationUITests.swift; sourceTree = "<group>"; };
 		5E7D87F321C805AF00789FB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EA61F4821C64792009F609E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		5EA61F4A21C65103009F609E /* BannerAdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdService.swift; sourceTree = "<group>"; };
 		5EA61F4C21C6971D009F609E /* EmailReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReminderViewController.swift; sourceTree = "<group>"; };
 		5EE2D96B21AA75BA0012EFC4 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 				A75E02421F34953500FB1872 /* AppDelegate.swift */,
 				A75AD0381F5EA158008B1237 /* AddToDiaryViewController.swift */,
 				A75E02441F34953500FB1872 /* ViewController.swift */,
-				5EA61F4821C64792009F609E /* Utility.swift */,
 				A773F8091F39C184005A9437 /* CustomLayout.swift */,
 				A773F8051F398500005A9437 /* DismissViewController.swift */,
 				A75E02571F349BD800FB1872 /* MenuViewController.swift */,
@@ -629,7 +626,6 @@
 				A773F80A1F39C184005A9437 /* CustomLayout.swift in Sources */,
 				5EE2D96C21AA75BA0012EFC4 /* ApiService.swift in Sources */,
 				A75E02451F34953500FB1872 /* ViewController.swift in Sources */,
-				5EA61F4921C64792009F609E /* Utility.swift in Sources */,
 				A75E025A1F349CC400FB1872 /* PresentViewController.swift in Sources */,
 				A770C8E81F3C1D5200C2BE84 /* AddEventsViewController.swift in Sources */,
 				5E5108CE21AA9ABA00C98B75 /* Metadata.swift in Sources */,

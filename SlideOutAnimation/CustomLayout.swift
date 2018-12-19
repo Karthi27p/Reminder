@@ -10,17 +10,14 @@ import UIKit
 
 class CustomLayoutAttributes: UICollectionViewLayoutAttributes {
     
-    // 1
     var photoHeight: CGFloat = 0.0
     
-    // 2
     override func copy(with zone: NSZone?) -> Any {
         let copy = super.copy(with:zone) as! CustomLayoutAttributes
         copy.photoHeight = photoHeight
         return copy
     }
     
-    // 3
     override func isEqual(_ object: Any?) -> Bool
     {
         if let attributes = object as? CustomLayoutAttributes {
@@ -51,9 +48,9 @@ class CustomLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
-        // 1
+        
         if cache.isEmpty {
-            // 2
+            
             let columnWidth = contentWidth / CGFloat(numberOfColumns)
             var xOffset = [CGFloat]()
             for column in 0 ..< numberOfColumns {
@@ -62,28 +59,21 @@ class CustomLayout: UICollectionViewLayout {
             var column = 0
             var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
             
-            // 3
             for item in 0 ..< collectionView!.numberOfItems(inSection: 0) {
                 
                 let indexPath = NSIndexPath(item: item, section: 0)
                 
-                // 4
                 let width = columnWidth - (cellPadding * 2)
                 let photoHeight = delegate.collectionView(collectionView: collectionView!, heightForPhotoAtIndexPath: indexPath,
                                                           withWidth:width)
-                //let annotationHeight = delegate.collectionView(collectionView: collectionView!,
-                //                                           heightForPhotoAtIndexPath: indexPath, withWidth: width)
                 let height = cellPadding +  photoHeight  + cellPadding
                 let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 
-                // 5
                 let attributes = CustomLayoutAttributes(forCellWith: indexPath as IndexPath)
-                //attributes.photoHeight = photoHeight
                 attributes.frame = insetFrame
                 cache.append(attributes)
                 
-                // 6
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffset[column] = yOffset[column] + height
                 

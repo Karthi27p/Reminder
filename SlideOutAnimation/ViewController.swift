@@ -11,16 +11,18 @@ import AVFoundation
 import CoreData
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate{
-
+    
     var photos : [UIImage] = [#imageLiteral(resourceName: "events"),#imageLiteral(resourceName: "news"),#imageLiteral(resourceName: "map"),#imageLiteral(resourceName: "diary")]
     var diaryItems : [NSManagedObject] = []
     var tagValue : Int = 5
     
     @IBOutlet var collectionView: UICollectionView!
     @IBAction func menuButtonAction(_ sender: Any) {
-    performSegue(withIdentifier: "OpenMenu", sender: (Any).self)
+        performSegue(withIdentifier: "OpenMenu", sender: (Any).self)
     }
-  
+    
+    //MARK: App life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let patternImage = UIImage(named: "pattern") {
@@ -30,9 +32,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if let layout = collectionView?.collectionViewLayout as? CustomLayout {
             layout.delegate = self as customLayoutDelegate
         }
-         tagValue = 5
+        tagValue = 5
         self.transitioningDelegate = self
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +55,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         navigationController?.delegate = self
     }
     
-    //Collection View Implementation
+    //MARK: Collection view delegate methods
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
@@ -64,15 +66,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cornerImageName : String = "square\(indexPath.row+1)"
         cornerImage.image = UIImage(named: cornerImageName)
         
-        //4321
-        
         let centerImage = cell.viewWithTag(tagValue) as! UIImageView
         let centerImageName : String = "square\(centerImage.tag)"
         centerImage.image = UIImage(named: centerImageName)
-        
-       
-            
-
         
         photoImageView.image = photos[indexPath.row]
         photoImageView.frame.size.height = (cell.frame.size.height)
@@ -89,11 +85,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
-    let customNavigationViewController = CustomNavigationController()
-
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     
+    let customNavigationViewController = CustomNavigationController()
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
         customNavigationViewController.reverse = false
         return customNavigationViewController as UIViewControllerAnimatedTransitioning
     }
@@ -105,7 +101,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         let destinationVC = segue.destination
         destinationVC.transitioningDelegate = self
         
@@ -139,7 +135,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
-    }
+}
 
 extension ViewController : UIViewControllerTransitioningDelegate{
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -156,10 +152,10 @@ extension ViewController : customLayoutDelegate {
     func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath,
                         withWidth width: CGFloat) -> CGFloat {
         /*let photo = photos[indexPath.item]
-        let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-        let rect  = AVMakeRect(aspectRatio: photo.size, insideRect: boundingRect)
-        return rect.size.height*/
-         return (UIScreen.main.bounds.size.height/2)-64
+         let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+         let rect  = AVMakeRect(aspectRatio: photo.size, insideRect: boundingRect)
+         return rect.size.height*/
+        return (UIScreen.main.bounds.size.height/2)-64
     }
     
 }

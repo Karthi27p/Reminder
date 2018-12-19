@@ -58,6 +58,4 @@ class CustomPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
             })
         }
     }
-
-    
 }

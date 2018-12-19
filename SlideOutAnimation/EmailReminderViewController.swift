@@ -19,6 +19,8 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var imageView: UIImageView!
     var emailItems : [NSManagedObject] = []
     
+    //MARK: App life cycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
@@ -41,7 +43,7 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         self.imageView.image = userSelectedImage
     }
     
-    // Text View Methods
+    //MARK: Text View Methods
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
@@ -75,6 +77,8 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         textView.resignFirstResponder()
     }
     
+    //MARK: Keyboard methods
+    
     @objc func dismissKeyBoard()
     {
         self.view.endEditing(true)
@@ -91,7 +95,7 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
     }
     
     // Image Picker
-   public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         // Local variable inserted by Swift 4.2 migrator.
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
@@ -100,8 +104,15 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         dismiss(animated: true, completion: nil)
     }
     
+    //MARK: email composer method
+    
     func configureMailComposer(mailId: [String], subject: String, body: String) -> MFMailComposeViewController{
-        fetchDataFromSQLite()
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Email")
+        fetchRequest.predicate = NSPredicate(format: "subject == %@", subject)
+        
+        fetchDataFromSQLite(fetchRequest: fetchRequest)
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.setToRecipients(mailId)
         mailComposerVC.setSubject(subject)
@@ -116,7 +127,8 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         
     }
     
-   
+    //MARK: Button Actions
+    
     @IBAction func closeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -148,6 +160,8 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         self.bodyTextView.textColor = UIColor.gray
     }
     
+    //MARK: Core Data Methods
+    
     func save(to: String, subject: String, body:String, image: Data)
     {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -170,14 +184,13 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         
     }
     
-    func fetchDataFromSQLite()
+    func fetchDataFromSQLite(fetchRequest: NSFetchRequest<NSManagedObject>)
     {
         guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else
         {
             return
         }
         let managedContext = appdelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Email")
         
         do{
             try

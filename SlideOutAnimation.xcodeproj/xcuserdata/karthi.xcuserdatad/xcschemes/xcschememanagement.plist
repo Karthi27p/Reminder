@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SlideOutAnimationTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>SlideOutAnimationUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>StickyNotes.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +27,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5E7D87D521C7E03F00789FB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E7D87EE21C805AF00789FB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A75E023E1F34953400FB1872</key>
 		<dict>
 			<key>primary</key>
