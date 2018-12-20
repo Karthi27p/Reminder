@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     var id = 0
     var remaindLater = false
-    var emailReminder = false
     let vc = ViewController()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
@@ -195,7 +194,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             scheduleNotification(at: newDate,event:remaindLaterId, repeatValue: false)
         }
         if response.actionIdentifier == "getIn" {
-            if(self.emailReminder) {
+            if((UserDefaults.standard.bool(forKey: "EmailReminder"))) {
                 let emailVC = EmailReminderViewController()
                 let mailComposeViewController = emailVC.configureMailComposer(mailId: [response.notification.request.content.subtitle] , subject: response.notification.request.content.title, body: response.notification.request.content.body)
                 mailComposeViewController.mailComposeDelegate = self
@@ -213,7 +212,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     print("Can't send email")
                 }
             }else {
-                
+        
             }
         }
         if response.actionIdentifier == "TextInput"

@@ -9,7 +9,15 @@
 import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let menuItems = ["Scheduled Events", "Add Events", "App Icons", "Sticky Notes", "Add To Diary", "Email Reminders"]
+    let menuItems = ["Scheduled Events", "Add Events", "App Icons", "Add To Diary", "Email Reminders"]
+    enum RowType: Int {
+        case scheduledEvents = 0
+        case addEvents
+        case appIcons
+        //case stickyNotes
+        case addToDiary
+        case email
+    }
     @IBOutlet var tableView: UITableView!
     @IBAction func closeButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -45,8 +53,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        if(indexPath.row == 0)
-        {
+
+        switch indexPath.row {
+        case RowType.scheduledEvents.rawValue:
             let kNavigationBarY = 20.0;
             let dayEventVC = storyBoard.instantiateViewController(withIdentifier: "ScheduledEvents") as! DayEventsViewController
             self.navigationController?.present(dayEventVC, animated: true)
@@ -59,31 +68,35 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             dayEventVC.view.addSubview(navBar)
             dayEventVC.watchAndReadTopConstraint.constant = navBar.frame.height-CGFloat(kNavigationBarY)
             dayEventVC.tableViewTopConstraint.constant = dayEventVC.watchAndReadTopConstraint.constant
-            
-        }
-        if(indexPath.row == 1)
-        {
+            break
+        case RowType.addEvents.rawValue:
             let addEventVC = storyBoard.instantiateViewController(withIdentifier: "AddEvents")
             self.navigationController?.present(addEventVC, animated: true)
-        }
-        if(indexPath.row == 2)
-        {
+            break
+       
+        case RowType.appIcons.rawValue:
             let editEventVC = storyBoard.instantiateViewController(withIdentifier: "AppIcons")
             self.navigationController?.present(editEventVC, animated: true)
-        }
-        if(indexPath.row == 3)
-        {
+            break
+       
+            // Commented sticky notes UI Due to app groups capability. Still widget will be displayed with static data
+            /*case RowType.stickyNotes.rawValue:
             let stickyNotesVC = storyBoard.instantiateViewController(withIdentifier: "StickyNotes")
             self.navigationController?.present(stickyNotesVC, animated: true)
-        }
-        if(indexPath.row == 4)
-        {
+            break*/
+
+        case RowType.addToDiary.rawValue:
             let addToDiaryVC = storyBoard.instantiateViewController(withIdentifier: "AddToDiary")
             self.navigationController?.present(addToDiaryVC, animated: true)
-        }
-        if(indexPath.row == 5) {
+            break
+       
+        case RowType.email.rawValue:
             let emailVC = storyBoard.instantiateViewController(withIdentifier: "Email")
             self.navigationController?.present(emailVC, animated: true)
+            break
+            
+        default:
+            break
         }
     }
     

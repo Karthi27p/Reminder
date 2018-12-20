@@ -38,7 +38,6 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         navigationController?.delegate = self
         bannerAdService.setBannerAdView(sender: self)
         bannerAdService.addBannerViewToView(senderView: self.view, sender: self)

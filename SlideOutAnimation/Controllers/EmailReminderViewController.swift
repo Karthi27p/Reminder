@@ -150,7 +150,7 @@ class EmailReminderViewController: UIViewController, UIImagePickerControllerDele
         self.save(to: toTextView.text, subject: subjectTextView.text, body: bodyTextView.text, image: imageData!)
         let delegate = UIApplication.shared.delegate as? AppDelegate
         let selectedDate = datePicker.date
-        delegate?.emailReminder = true
+        UserDefaults.standard.set(true, forKey: "EmailReminder")
         delegate?.scheduledBirthdayEmails(at:selectedDate , subject: subjectTextView.text, to:toTextView.text, body: bodyTextView.text)
         self.toTextView.text = "To:"
         self.toTextView.textColor = UIColor.gray

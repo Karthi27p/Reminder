@@ -147,7 +147,7 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
         let selectedDate = datePicker.date
         self.save(name: eventName.text!)
         let delegate = UIApplication.shared.delegate as? AppDelegate
-        delegate?.emailReminder = false
+        UserDefaults.standard.set(false, forKey: "EmailReminder")
         delegate?.scheduleNotification(at: selectedDate, event: eventName.text!, repeatValue:setRepeat)
         self.dismiss(animated: true, completion:nil)
         AddEventsViewController.schedulePressed = true

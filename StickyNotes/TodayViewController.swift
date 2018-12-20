@@ -13,16 +13,17 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     var stickyNotes : Array<Any> = []
     let defaults = UserDefaults()
     @IBOutlet var tableView: UITableView!
-    //let stickeyNotes : [String] = ["Sometimes users get this error message saying that there is no internet connection message saying that there is no internet connection Sometimes users get this error message saying that there is no internet connection.Sometimes users get this error message saying that there is no internet connection message saying that there is no internet connection", "Note 2", "Note 3", "Note 4", "Note 5"]
     
-    //let stickyNoteasObj = StickyNotesViewController()
+    //Static content for sticky notes
+    let stickyNoteasObj = StickyNotesViewController()
         override func viewDidLoad() {
         super.viewDidLoad()
         extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
-        //stickyNotes = StickyNotesViewController.stickeyNotesObj.retriveStickyNotes()
-            
-            defaults.addSuite(named: "group.com.tringapps.slideAnimation")
-            stickyNotes = defaults.object(forKey: "StickyNotes") as! Array<Any>
+        //Static content for sticky notes
+        stickyNotes = StickyNotesViewController.stickeyNotesObj.retriveStickyNotes()
+        // Enable app groups and uncomment below lines
+            //defaults.addSuite(named: "group.com.tringapps.slideAnimation")
+            //stickyNotes = defaults.object(forKey: "StickyNotes") as! Array<Any>
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,9 +33,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
-        //stickyNotes = StickyNotesViewController.stickeyNotesObj.retriveStickyNotes()
-        defaults.addSuite(named: "group.com.tringapps.slideAnimation")
-        stickyNotes = defaults.object(forKey: "StickyNotes") as! Array<Any>
+        //Static content for sticky notes
+        stickyNotes = StickyNotesViewController.stickeyNotesObj.retriveStickyNotes()
+        // Enable app groups and uncomment below lines
+        //defaults.addSuite(named: "group.com.tringapps.slideAnimation")
+        //stickyNotes = defaults.object(forKey: "StickyNotes") as! Array<Any>
         completionHandler(NCUpdateResult.newData)
     }
     

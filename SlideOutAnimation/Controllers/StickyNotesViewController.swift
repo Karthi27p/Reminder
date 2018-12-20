@@ -11,7 +11,7 @@ import UIKit
 class StickyNotesViewController: UIViewController {
     static let stickeyNotesObj = StickyNotesViewController()
     @IBOutlet var textArea: UITextView!
-    var stickyNotesContent = ["Test"]
+    var stickyNotesContent = ["Set up call at 7.00 PM and send minutes by 9.00 PM. Discuss about the velocity for this sprint. Discuss about relative sizing", "Buy kiwi from fruit shop. Collect the parcel from counter", "Get meat for the pets", "Pay electricity bill by 20th"]
     
     //MARK: App life cycle methods
     

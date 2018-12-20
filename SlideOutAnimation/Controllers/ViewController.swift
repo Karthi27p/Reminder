@@ -15,6 +15,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var photos : [UIImage] = [#imageLiteral(resourceName: "events"),#imageLiteral(resourceName: "news"),#imageLiteral(resourceName: "map"),#imageLiteral(resourceName: "diary")]
     var diaryItems : [NSManagedObject] = []
     var tagValue : Int = 5
+    enum CellType: Int {
+      case day
+      case news
+      case map
+      case diary
+    }
     
     @IBOutlet var collectionView: UICollectionView!
     @IBAction func menuButtonAction(_ sender: Any) {
@@ -109,31 +115,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        if(indexPath.row == 0)
-        {
+        switch indexPath.row {
+        case CellType.day.rawValue:
             self.performSegue(withIdentifier: "Day", sender: nil)
-        }
-        if(indexPath.row == 1)
-        {
+            break
+        case CellType.news.rawValue:
             self.performSegue(withIdentifier: "News", sender: nil)
-        }
-        if(indexPath.row == 2)
-        {
+            break
+        case CellType.map.rawValue:
             self.performSegue(withIdentifier: "Map", sender: nil)
-        }
-        if(indexPath.row == 3)
-        {
-            if(self.diaryItems.count == 0)
-            {
+            break
+        case CellType.diary.rawValue:
+            if(self.diaryItems.count == 0) {
                 self.performSegue(withIdentifier: "AddToDiary", sender: nil)
-            }
-            else
-            {
+            } else {
                 self.performSegue(withIdentifier: "Diary", sender: nil)
             }
-            
+        default:
+            break
         }
-    }
+        
+        }
+
     
 }
 

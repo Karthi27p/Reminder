@@ -51,6 +51,7 @@
 		A7522D8321CA7CB10054FFFD /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D5B21CA7CB10054FFFD /* Metadata.swift */; };
 		A7522D8421CA7CB10054FFFD /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D5C21CA7CB10054FFFD /* Modules.swift */; };
 		A7522D8521CA7CB10054FFFD /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D5D21CA7CB10054FFFD /* Section.swift */; };
+		A7522D8621CA86560054FFFD /* StickyNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4921CA7CB10054FFFD /* StickyNotesViewController.swift */; };
 		A75E02431F34953500FB1872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E02421F34953500FB1872 /* AppDelegate.swift */; };
 		A75E02481F34953500FB1872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75E02461F34953500FB1872 /* Main.storyboard */; };
 		A75E024B1F34953500FB1872 /* SlideOutAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A75E02491F34953500FB1872 /* SlideOutAnimation.xcdatamodeld */; };
@@ -703,6 +704,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7657C151F3F245B00A6EF96 /* TodayViewController.swift in Sources */,
+				A7522D8621CA86560054FFFD /* StickyNotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +963,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tarun Gaur (FDH592XJR2)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6VEK7EP32G;
 				ENABLE_BITCODE = YES;
@@ -973,6 +976,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "All App Dev";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -982,6 +986,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tarun Gaur (FDH592XJR2)";
 				DEVELOPMENT_TEAM = 6VEK7EP32G;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SlideOutAnimation/Info.plist;
@@ -993,6 +998,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "All App Dev";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
