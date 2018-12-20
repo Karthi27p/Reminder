@@ -15,6 +15,8 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet var diaryTextView: UITextView!
     let diaryViewController = DiaryViewController()
+    let kEnterYourContent = "Enter Your Content"
+    let kTitle = "Title"
     
     //MARK: App life cycle methods
     
@@ -57,13 +59,13 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
-        if(textView.text == "Enter Your Content")
+        if(textView.text == kEnterYourContent)
         {
             textView.text = ""
             textView.textColor = UIColor.black
             
         }
-        if(textView.text == "Title")
+        if(textView.text == kTitle)
         {
             textView.text = ""
             textView.textColor = UIColor.black
@@ -78,12 +80,12 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
         {
             if(textView.tag == 101)
             {
-                textView.text = "Enter Your Content"
+                textView.text = kEnterYourContent
                 textView.textColor = UIColor.gray
             }
             else
             {
-                textView.text = "Title"
+                textView.text = kTitle
                 textView.textColor = UIColor.gray
             }
             
@@ -160,9 +162,9 @@ class AddToDiaryViewController: UIViewController, UITextViewDelegate, UIImagePic
     @IBAction func addToDiaryButtonPressed(_ sender: Any) {
         let imageData = userSelectedImage.pngData()
         self.save(title: titleTextView.text, content: diaryTextView.text, image: imageData!)
-        self.titleTextView.text = "Title"
+        self.titleTextView.text = kTitle
         self.titleTextView.textColor = UIColor.gray
-        self.diaryTextView.text = "Enter Your Content"
+        self.diaryTextView.text = kEnterYourContent
         self.diaryTextView.textColor = UIColor.gray
     }
 }

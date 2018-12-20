@@ -14,6 +14,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
     var listOfEvents : [NSManagedObject] = []
     static let dayEventObj = DayEventsViewController()
     let bannerAdService = BannerAdService()
+    let kEvents = "Events"
     @IBOutlet var tableView: UITableView!
     @IBAction func plusButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "Present", sender: (Any).self)
@@ -54,7 +55,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
             return
         }
         let managedContext = appdelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Events")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: kEvents)
         
         do{
             try
@@ -123,7 +124,7 @@ class DayEventsViewController: UIViewController, UITableViewDelegate, UITableVie
                     }
                 }
             }
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Events")
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: kEvents)
             
             do{
                 try

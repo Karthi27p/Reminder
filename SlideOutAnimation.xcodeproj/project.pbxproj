@@ -28,7 +28,6 @@
 		A7522D6C21CA7CB10054FFFD /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4021CA7CB10054FFFD /* DiaryViewController.swift */; };
 		A7522D6D21CA7CB10054FFFD /* DismissViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4121CA7CB10054FFFD /* DismissViewController.swift */; };
 		A7522D6E21CA7CB10054FFFD /* EmailReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4221CA7CB10054FFFD /* EmailReminderViewController.swift */; };
-		A7522D6F21CA7CB10054FFFD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4321CA7CB10054FFFD /* MapViewController.swift */; };
 		A7522D7021CA7CB10054FFFD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4421CA7CB10054FFFD /* MenuViewController.swift */; };
 		A7522D7121CA7CB10054FFFD /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4521CA7CB10054FFFD /* NewsViewController.swift */; };
 		A7522D7221CA7CB10054FFFD /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4621CA7CB10054FFFD /* PageViewController.swift */; };
@@ -137,7 +136,6 @@
 		A7522D4021CA7CB10054FFFD /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		A7522D4121CA7CB10054FFFD /* DismissViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissViewController.swift; sourceTree = "<group>"; };
 		A7522D4221CA7CB10054FFFD /* EmailReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailReminderViewController.swift; sourceTree = "<group>"; };
-		A7522D4321CA7CB10054FFFD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A7522D4421CA7CB10054FFFD /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A7522D4521CA7CB10054FFFD /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		A7522D4621CA7CB10054FFFD /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				A7522D4021CA7CB10054FFFD /* DiaryViewController.swift */,
 				A7522D4121CA7CB10054FFFD /* DismissViewController.swift */,
 				A7522D4221CA7CB10054FFFD /* EmailReminderViewController.swift */,
-				A7522D4321CA7CB10054FFFD /* MapViewController.swift */,
 				A7522D4421CA7CB10054FFFD /* MenuViewController.swift */,
 				A7522D4521CA7CB10054FFFD /* NewsViewController.swift */,
 				A7522D4621CA7CB10054FFFD /* PageViewController.swift */,
@@ -663,7 +660,6 @@
 				A7522D6321CA7CB10054FFFD /* PhotoCentricCollectionViewCell.swift in Sources */,
 				A75E024B1F34953500FB1872 /* SlideOutAnimation.xcdatamodeld in Sources */,
 				A7522D6021CA7CB10054FFFD /* DiaryImageCellTableViewCell.swift in Sources */,
-				A7522D6F21CA7CB10054FFFD /* MapViewController.swift in Sources */,
 				A7522D6421CA7CB10054FFFD /* PhotoCentricTableViewCell.swift in Sources */,
 				A7522D5F21CA7CB10054FFFD /* DiaryContentCell.swift in Sources */,
 				A7522D7221CA7CB10054FFFD /* PageViewController.swift in Sources */,

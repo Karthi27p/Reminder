@@ -19,6 +19,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     var currentIndex = 0
     var hasDiaryItems = false
     var deleteCount = 1
+    let kDiary = "Diary"
     var diaryViewControllerObj = DiaryViewController()
     
     //MARK: App life cycle methods
@@ -34,7 +35,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         }
         NotificationCenter.default.addObserver(self, selector: #selector(disableDeleteButton), name: NSNotification.Name(rawValue: "HideDeleteButton"), object: nil)
         let managedContext = appdelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Diary")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: kDiary)
         
         do{
             try
@@ -95,7 +96,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     
     func getViewControllerAtIndex(index: NSInteger) -> DiaryViewController
     {
-        diaryViewControllerObj = storyboard?.instantiateViewController(withIdentifier: "Diary") as! DiaryViewController
+        diaryViewControllerObj = storyboard?.instantiateViewController(withIdentifier: kDiary) as! DiaryViewController
         diaryViewControllerObj.pageIndex = (diaryItems.count-1 == currentIndex) ? 0 : index
         
         NSLog("%d", currentIndex)
@@ -111,7 +112,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
             return
         }
         let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Diary")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: kDiary)
         
         do{
             try

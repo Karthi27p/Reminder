@@ -19,6 +19,8 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
     var contentHeight : CGFloat = 0
     var contentDeleted = false
     var interstitial: GADInterstitial!
+    let kDiaryImageCell = "DiaryImageCell"
+    let kAdUnitId = "ca-app-pub-3940256099942544/4411468910"
     @IBOutlet var animatedImageViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet var tableView: UITableView!
@@ -36,7 +38,7 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         navigationController?.delegate = self as UINavigationControllerDelegate
         self.animatedImageViewWidthConstraint.constant = self.imageViewWidth
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial = GADInterstitial(adUnitID: kAdUnitId)
         interstitial.delegate = self
         interstitial = createAndLoadInterstitial()
         // Do any additional setup after loading the view.
@@ -81,7 +83,7 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
             container.isHidden = false
             if(indexPath.row == 0)
             {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryImageCell") as! DiaryImageCellTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: kDiaryImageCell) as! DiaryImageCellTableViewCell
                 let event = diaryItems[pageIndex]
                 let imageData = event.value(forKey: "image") as? Data
                 self.animatedImageView.image = UIImage(data: imageData!)
@@ -104,7 +106,7 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryImageCell") as! DiaryImageCellTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: kDiaryImageCell) as! DiaryImageCellTableViewCell
             cell.imageView?.image = nil
             container.isHidden = true
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "HideDeleteButton"), object: nil)
@@ -208,7 +210,7 @@ class DiaryViewController: UIViewController, UITableViewDataSource, UITableViewD
     // Interstitial ad
     
     func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let interstitial = GADInterstitial(adUnitID: kAdUnitId)
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial

@@ -18,6 +18,7 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
     var eventNamesArray = ["List of events"]
     var setRepeat = true
     var pathOfImage : String = ""
+    let kUserSelectedImage = "userSelectedImage.png"
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var remindMeBefore: UITextField!
     @IBOutlet var eventName: UITextField!
@@ -37,7 +38,7 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
         let tap = UITapGestureRecognizer(target: self, action: #selector(AddEventsViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         let fileManager = FileManager.default
-        let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent("userSelectedImage.png")
+        let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(kUserSelectedImage)
         if fileManager.fileExists(atPath: imagePath){
             self.eventImage.image = UIImage(contentsOfFile: imagePath)
         }else{
@@ -60,7 +61,7 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
         
         eventImage.image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
         let fileManager = FileManager.default
-        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("userSelectedImage.png")
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(kUserSelectedImage)
         let image = eventImage.image
         print(paths)
         pathOfImage = paths
@@ -157,7 +158,6 @@ class AddEventsViewController: UIViewController, UIImagePickerControllerDelegate
 
 extension Notification.Name
 {
-    //static let reload = Notification.Name("reload")
     static let updateImage = Notification.Name("updateImage")
 }
 
