@@ -7,6 +7,7 @@ target 'SlideOutAnimation' do
   pod 'Google-Mobile-Ads-SDK'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'UrbanAirship-iOS-SDK'
   # Pods for SlideOutAnimation
 
 end

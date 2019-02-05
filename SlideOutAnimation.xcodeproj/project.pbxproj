@@ -51,6 +51,7 @@
 		A7522D8421CA7CB10054FFFD /* Modules.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D5C21CA7CB10054FFFD /* Modules.swift */; };
 		A7522D8521CA7CB10054FFFD /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D5D21CA7CB10054FFFD /* Section.swift */; };
 		A7522D8621CA86560054FFFD /* StickyNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7522D4921CA7CB10054FFFD /* StickyNotesViewController.swift */; };
+		A758B15F22095DDF004B6714 /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = A758B15E22095DDF004B6714 /* AirshipConfig.plist */; };
 		A75E02431F34953500FB1872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E02421F34953500FB1872 /* AppDelegate.swift */; };
 		A75E02481F34953500FB1872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75E02461F34953500FB1872 /* Main.storyboard */; };
 		A75E024B1F34953500FB1872 /* SlideOutAnimation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A75E02491F34953500FB1872 /* SlideOutAnimation.xcdatamodeld */; };
@@ -158,6 +159,7 @@
 		A7522D5B21CA7CB10054FFFD /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 		A7522D5C21CA7CB10054FFFD /* Modules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modules.swift; sourceTree = "<group>"; };
 		A7522D5D21CA7CB10054FFFD /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		A758B15E22095DDF004B6714 /* AirshipConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
 		A75E023F1F34953400FB1872 /* SlideOutAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75E02421F34953500FB1872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A75E02471F34953500FB1872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				A7522D4E21CA7CB10054FFFD /* Service */,
 				A732B3E01F517F7500660C15 /* SlideOutAnimation.entitlements */,
 				A75E02421F34953500FB1872 /* AppDelegate.swift */,
+				A758B15E22095DDF004B6714 /* AirshipConfig.plist */,
 				A75E02461F34953500FB1872 /* Main.storyboard */,
 				5E7D87E521C7EE2000789FB0 /* News_Sample.json */,
 				A75E024C1F34953500FB1872 /* Assets.xcassets */,
@@ -434,6 +437,7 @@
 				A75E023D1F34953400FB1872 /* Resources */,
 				A7657C201F3F245B00A6EF96 /* Embed App Extensions */,
 				5E5C43AF21B3CE9F001E1804 /* ShellScript */,
+				C9BA9E7ED7E7198C8D67183E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -475,33 +479,39 @@
 				TargetAttributes = {
 					5E7D87D521C7E03F00789FB0 = {
 						CreatedOnToolsVersion = 10.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = A75E023E1F34953400FB1872;
 					};
 					5E7D87EE21C805AF00789FB0 = {
 						CreatedOnToolsVersion = 10.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = A75E023E1F34953400FB1872;
 					};
 					A75E023E1F34953400FB1872 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6VEK7EP32G;
+						DevelopmentTeam = RXN7SWLZ2X;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
 					A7657C0E1F3F245B00A6EF96 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6VEK7EP32G;
+						DevelopmentTeam = RXN7SWLZ2X;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -551,6 +561,7 @@
 				A7522D7E21CA7CB10054FFFD /* map.png in Resources */,
 				A7522D8021CA7CB10054FFFD /* reminder.png in Resources */,
 				A7522D7B21CA7CB10054FFFD /* diary.png in Resources */,
+				A758B15F22095DDF004B6714 /* AirshipConfig.plist in Resources */,
 				A7522D7C21CA7CB10054FFFD /* DontForget.png in Resources */,
 				A7522D7D21CA7CB10054FFFD /* events.png in Resources */,
 				5E7D87E621C7EE2000789FB0 /* News_Sample.json in Resources */,
@@ -631,6 +642,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9BA9E7ED7E7198C8D67183E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SlideOutAnimation/Pods-SlideOutAnimation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/UrbanAirship-iOS-SDK/AirshipKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AirshipKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlideOutAnimation/Pods-SlideOutAnimation-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -760,7 +793,8 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SlideOutAnimationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -769,6 +803,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideOutAnimation.app/SlideOutAnimation";
@@ -783,7 +818,8 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SlideOutAnimationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -791,6 +827,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlideOutAnimation.app/SlideOutAnimation";
@@ -804,7 +841,8 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SlideOutAnimationUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -814,6 +852,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6bfeaa72-52a8-49f2-9055-b6af03cf7122";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SlideOutAnimation;
@@ -827,7 +866,8 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = SlideOutAnimationUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -836,6 +876,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6bfeaa72-52a8-49f2-9055-b6af03cf7122";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SlideOutAnimation;
@@ -959,17 +1000,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tarun Gaur (FDH592XJR2)";
+				CODE_SIGN_ENTITLEMENTS = SlideOutAnimation/SlideOutAnimation.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: tringapps, Inc.";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6VEK7EP32G;
+				DEVELOPMENT_TEAM = RXN7SWLZ2X;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SlideOutAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.pets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6bfeaa72-52a8-49f2-9055-b6af03cf7122";
-				PROVISIONING_PROFILE_SPECIFIER = "All App Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Tringbytes Pets - InHouse Distribution Profile";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -982,16 +1024,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tarun Gaur (FDH592XJR2)";
-				DEVELOPMENT_TEAM = 6VEK7EP32G;
+				CODE_SIGN_ENTITLEMENTS = SlideOutAnimation/SlideOutAnimation.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: tringapps, Inc.";
+				DEVELOPMENT_TEAM = RXN7SWLZ2X;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = SlideOutAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.pets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6bfeaa72-52a8-49f2-9055-b6af03cf7122";
-				PROVISIONING_PROFILE_SPECIFIER = "All App Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Tringbytes Pets - InHouse Distribution Profile";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1002,14 +1045,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 610E6FC586D6D9576D456EA5 /* Pods-StickyNotes.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 6VEK7EP32G;
+				CODE_SIGN_ENTITLEMENTS = StickyNotes/StickyNotes.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				DEVELOPMENT_TEAM = RXN7SWLZ2X;
 				INFOPLIST_FILE = StickyNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimation.StickyNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.pets.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6bfeaa72-52a8-49f2-9055-b6af03cf7122";
-				PROVISIONING_PROFILE_SPECIFIER = "All App Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Tringbytes Pets Today - InHouse Distrib Profile";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -1020,14 +1065,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5959E01D10FDDDCECD42953 /* Pods-StickyNotes.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 6VEK7EP32G;
+				CODE_SIGN_ENTITLEMENTS = StickyNotes/StickyNotes.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				DEVELOPMENT_TEAM = RXN7SWLZ2X;
 				INFOPLIST_FILE = StickyNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.SlideOutAnimation.StickyNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tringapps.pets.today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6bfeaa72-52a8-49f2-9055-b6af03cf7122";
-				PROVISIONING_PROFILE_SPECIFIER = "All App Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Tringbytes Pets Today - InHouse Distrib Profile";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;

@@ -13,6 +13,7 @@ import GoogleMobileAds
 import Fabric
 import Crashlytics
 import MessageUI
+import AirshipKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MFMailComposeViewControllerDelegate {
@@ -36,6 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let category = UNNotificationCategory(identifier: "myCategory", actions: [action,getinAction,textAction], intentIdentifiers: [], options: [])
         
         UNUserNotificationCenter.current().setNotificationCategories([category])
+        UAirship.takeOff()
+        UAirship.push()?.userPushNotificationsEnabled = true
+        UAirship.push()?.defaultPresentationOptions = [.alert, .badge, .sound]
+        UAirship.push()?.isAutobadgeEnabled = true
+        
         return true
         
     }
@@ -236,6 +242,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 let newDate = Date(timeInterval: (minutes!*60) , since: Date())
                 scheduleNotification(at: newDate,event:remaindLaterId, repeatValue: false)
             }
+        } else {
+            
+            //Urban Airship notification
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let newsVC: NewsViewController = storyboard.instantiateViewController(withIdentifier: "News") as! NewsViewController
+            let rootViewController = self.window!.rootViewController as! UINavigationController
+            rootViewController.pushViewController(newsVC, animated: true)
+            UAirship.push()?.resetBadge()
         }
         
         
@@ -250,7 +264,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
     }
-    
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
     {

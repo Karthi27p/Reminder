@@ -3,23 +3,27 @@ PODS:
     - Fabric (~> 1.9.0)
   - Fabric (1.9.0)
   - Google-Mobile-Ads-SDK (7.36.0)
+  - UrbanAirship-iOS-SDK (10.0.3)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - Google-Mobile-Ads-SDK
+  - UrbanAirship-iOS-SDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Crashlytics
     - Fabric
     - Google-Mobile-Ads-SDK
+    - UrbanAirship-iOS-SDK
 
 SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Google-Mobile-Ads-SDK: 5bb4d2cea811842e104a24780caef63b4808e1bd
+  UrbanAirship-iOS-SDK: 1ae7e6533a0b4798f0085eff5895a63df96efc9e
 
-PODFILE CHECKSUM: 70c402bd653d814fb0d560bdbe9b35fd97f5de73
+PODFILE CHECKSUM: 1d6a1b4af615b06cb586317cf7e8f74e263afd58
 
 COCOAPODS: 1.5.3
