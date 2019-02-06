@@ -12,6 +12,7 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate, UITableViewDataSource {
     var stickyNotes : Array<Any> = []
     let defaults = UserDefaults()
+    var rowCount : Int = 0
     @IBOutlet var tableView: UITableView!
     
     //Static content for sticky notes
@@ -62,7 +63,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (CGFloat(Int(UIScreen.main.bounds.height)/5)-10)
+        return (CGFloat(Int(UIScreen.main.bounds.height)/rowCount)-10)
     }
     
     public func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize)
@@ -86,5 +87,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
                 stickyNotes.removeFirst()
             }
         }
+       rowCount = stickyNotes.count < 4 ? stickyNotes.count : 5
     }
 }

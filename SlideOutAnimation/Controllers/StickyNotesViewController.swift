@@ -53,5 +53,6 @@ class StickyNotesViewController: UIViewController {
         let userDefaults = UserDefaults.init(suiteName: "group.com.tringapps.pets")
         userDefaults!.setValue(stickyNotesContent, forKey: "StickyNotes")
         userDefaults?.synchronize()
+        self.textArea.text = ""
     }
 }
