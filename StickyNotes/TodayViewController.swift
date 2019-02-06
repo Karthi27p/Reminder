@@ -15,15 +15,17 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     @IBOutlet var tableView: UITableView!
     
     //Static content for sticky notes
-    let stickyNoteasObj = StickyNotesViewController()
+    //let stickyNotesObj = StickyNotesViewController()
         override func viewDidLoad() {
         super.viewDidLoad()
         extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
         //Static content for sticky notes
-        stickyNotes = StickyNotesViewController.stickeyNotesObj.retriveStickyNotes()
+        //stickyNotes = StickyNotesViewController.stickeyNotesObj.retriveStickyNotes()
+            
         // Enable app groups and uncomment below lines
-            //defaults.addSuite(named: "group.com.tringapps.slideAnimation")
-            //stickyNotes = defaults.object(forKey: "StickyNotes") as! Array<Any>
+            
+        self.retriveWidgetContent()
+            
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,10 +36,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         //Static content for sticky notes
-        stickyNotes = StickyNotesViewController.stickeyNotesObj.retriveStickyNotes()
+        //stickyNotes = StickyNotesViewController.stickeyNotesObj.retriveStickyNotes()
+        
         // Enable app groups and uncomment below lines
-        //defaults.addSuite(named: "group.com.tringapps.slideAnimation")
-        //stickyNotes = defaults.object(forKey: "StickyNotes") as! Array<Any>
+    
+        self.retriveWidgetContent()
         completionHandler(NCUpdateResult.newData)
     }
     
@@ -59,7 +62,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (CGFloat(Int(UIScreen.main.bounds.height)/stickyNotes.count)-10)
+        return (CGFloat(Int(UIScreen.main.bounds.height)/5)-10)
     }
     
     public func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize)
@@ -72,6 +75,16 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         {
             
             self.preferredContentSize = CGSize(width: maxSize.width,height:1000.0)
+        }
+    }
+    
+    func retriveWidgetContent() {
+        let userDefaults = UserDefaults.init(suiteName:  "group.com.tringapps.pets")
+        stickyNotes = userDefaults?.value(forKey: "StickyNotes") as! Array<Any>
+        for _ in stickyNotes {
+            if(stickyNotes.count > 4) {
+                stickyNotes.removeFirst()
+            }
         }
     }
 }

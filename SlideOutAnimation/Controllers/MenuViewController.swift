@@ -9,12 +9,12 @@
 import UIKit
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let menuItems = ["Scheduled Events", "Add Events", "App Icons", "Add To Diary", "Email Reminders"]
+    let menuItems = ["Scheduled Events", "Add Events", "App Icons", "Sticky Notes", "Add To Diary", "Email Reminders"]
     enum RowType: Int {
         case scheduledEvents = 0
         case addEvents
         case appIcons
-        //case stickyNotes
+        case stickyNotes
         case addToDiary
         case email
     }
@@ -80,10 +80,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             break
        
             // Commented sticky notes UI Due to app groups capability. Still widget will be displayed with static data
-            /*case RowType.stickyNotes.rawValue:
+        case RowType.stickyNotes.rawValue:
             let stickyNotesVC = storyBoard.instantiateViewController(withIdentifier: "StickyNotes")
             self.navigationController?.present(stickyNotesVC, animated: true)
-            break*/
+            break
 
         case RowType.addToDiary.rawValue:
             let addToDiaryVC = storyBoard.instantiateViewController(withIdentifier: "AddToDiary")
